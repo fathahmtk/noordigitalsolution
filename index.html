@@ -36,16 +36,16 @@
     <style>
         /* New Theme Color Variables: Blue, Golden, Black */
         :root {
-            --primary-black: #0A192F; /* Deep Black/Navy for primary backgrounds */
-            --secondary-black: #172B4D; /* Slightly lighter black for cards/elements */
-            --tertiary-black: #213555; /* Even lighter for input fields or subtle highlights */
-            --accent-blue: #007bff; /* Primary Blue for highlights */
-            --accent-blue-hover: #0056b3; /* Darker blue on hover */
-            --accent-golden: #FFD700; /* Pure Gold, can be adjusted for a richer tone like #C99B34 */
-            --text-light: #E0E0E0; /* Light grey for primary text */
-            --text-muted-light: #A0A0A0; /* Muted grey for secondary text */
-            --border-color: #364F6B; /* Border color to match the theme */
-            --shadow-color: rgba(0, 0, 0, 0.6); /* Darker shadow */
+            --primary-navy: #0D2040; /* Deep dark blue/navy from the image background */
+            --secondary-navy: #1A3464; /* Slightly lighter navy for cards/elements */
+            --tertiary-navy: #294A80; /* Even lighter for input fields or subtle highlights */
+            --accent-blue: #007BFF; /* Vibrant blue for highlights and button gradients */
+            --accent-blue-dark: #0056b3; /* Darker blue on hover */
+            --accent-golden: #FFC107; /* Vibrant golden/orange accent */
+            --text-light: #F8F9FA; /* White for primary text */
+            --text-muted-light: #CED4DA; /* Light grey for secondary text */
+            --border-color: rgba(54, 79, 107, 0.5); /* Border color to match the theme with transparency */
+            --shadow-color: rgba(0, 0, 0, 0.4); /* Softer shadow */
         }
 
         /* General Styles */
@@ -55,10 +55,7 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background-color: var(--primary-black);
-            /* High-class AI-themed background */
-            background-image: url('https://images.unsplash.com/photo-1620712948252-5a21be6c3116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwyMHx8YWklMjBtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzE5MjM0NTA3fDB8&ixlib=rb-4.0.3&q=80&w=1080'); /* Using an AI-themed image from Unsplash */
-            background-size: cover; /* Cover the entire background */
+            background-color: var(--primary-navy); /* Main background color */
             background-attachment: fixed; /* Keep background fixed while scrolling */
             background-position: center center; /* Center the background image */
             background-repeat: no-repeat; /* Do not repeat the background image */
@@ -76,12 +73,12 @@
         }
 
         a:hover {
-            color: var(--accent-blue-hover);
+            color: var(--accent-blue-dark);
         }
 
         /* Header Specific Styles */
         #header {
-            background: var(--secondary-black);
+            background: var(--secondary-navy);
             padding: 15px 0; /* Slightly reduced padding */
             box-shadow: 0px 2px 15px var(--shadow-color);
             position: fixed;
@@ -150,13 +147,14 @@
             border-radius: 50px;
             transition: 0.5s;
             color: #fff;
-            background: var(--accent-blue);
+            background: linear-gradient(to right, #007BFF, #00C1FF); /* Blue gradient from image */
             box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
             margin-left: 20px;
+            border: none; /* Ensure no default border */
         }
 
         .btn-get-started:hover {
-            background: var(--accent-blue-hover);
+            background: linear-gradient(to right, #0056b3, #0099CC); /* Darker gradient on hover */
             color: #fff;
         }
 
@@ -164,7 +162,9 @@
         .hero {
             width: 100%;
             min-height: 100vh;
-            background: rgba(10, 25, 47, 0.8); /* Darker overlay for readability */
+            /* Background from the provided image */
+            background: linear-gradient(to bottom, rgba(13, 32, 64, 0.9), rgba(13, 32, 64, 0.9)), url('https://images.unsplash.com/photo-1517036601147-38668984a9e5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+            background-size: cover; /* Cover the entire background */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -172,6 +172,21 @@
             position: relative;
             overflow: hidden;
         }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2); /* Dark overlay for text readability */
+            z-index: 1;
+        }
+
+        .hero .container {
+            z-index: 2; /* Ensure content is above overlay */
+        }
+
 
         .hero h2 {
             font-size: 48px;
@@ -191,7 +206,7 @@
         }
 
         .hero .btn-get-started {
-            background: var(--accent-blue);
+            background: linear-gradient(to right, var(--accent-blue), #00C1FF); /* Blue gradient from image */
             color: #fff;
             border: 0;
             padding: 12px 30px;
@@ -199,7 +214,7 @@
         }
 
         .hero .btn-get-started:hover {
-            background: var(--accent-blue-hover);
+            background: linear-gradient(to right, var(--accent-blue-dark), #0099CC);
         }
 
         .hero .btn-watch-video {
@@ -223,11 +238,14 @@
         }
 
         .hero img {
+            /* This image in the hero is now part of the content, not background */
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             box-shadow: 0px 0px 30px var(--shadow-color);
+            position: relative; /* Ensure it's above the hero overlay */
+            z-index: 2;
         }
 
         /* Hero Icon Boxes (under Hero) */
@@ -238,7 +256,7 @@
         }
 
         .icon-boxes .icon-box {
-            background: var(--secondary-black);
+            background: var(--secondary-navy);
             padding: 40px 30px;
             box-shadow: 0px 0px 30px var(--shadow-color);
             border-radius: 8px;
@@ -279,12 +297,11 @@
         section {
             padding: 80px 0;
             overflow: hidden;
-            /* Overlay for section backgrounds to ensure readability over the main body background */
-            background-color: rgba(10, 25, 47, 0.9); /* A slightly more opaque primary-black for sections */
+            background-color: var(--primary-navy); /* Solid primary navy for sections */
         }
 
         .section-bg {
-            background-color: var(--primary-black);
+            background-color: var(--primary-navy); /* Consistency */
         }
         
         .section-header {
@@ -307,11 +324,11 @@
 
         /* Services We Offer & Specialized Solutions */
         .top-icon-box {
-            background-color: rgba(23, 43, 77, 0.9); /* A slightly more opaque secondary-black for this section */
+            background-color: var(--secondary-navy); /* Solid secondary navy for this section */
         }
 
         .top-icon-box .icon-box {
-            background: var(--primary-black); /* Darker card background within this section */
+            background: var(--primary-navy); /* Darker card background within this section */
             padding: 40px 30px;
             box-shadow: 0px 0px 30px var(--shadow-color);
             border-radius: 8px;
@@ -361,7 +378,7 @@
         }
 
         #specialized-solutions .industry-box {
-            background: var(--tertiary-black); /* Darkest card background for industry specific */
+            background: var(--tertiary-navy); /* Darkest card background for industry specific */
             padding: 25px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -395,7 +412,7 @@
             margin-bottom: 0;
         }
         #specialized-solutions .erp-solution {
-            background: var(--secondary-black); /* Distinct background for ERP */
+            background: var(--secondary-navy); /* Distinct background for ERP */
             padding: 40px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -425,7 +442,7 @@
 
         /* Hardware & Software Solutions Section */
         #hardware-software-solutions {
-            background-color: rgba(10, 25, 47, 0.9);
+            background-color: var(--primary-navy);
         }
         #hardware-software-solutions .category-header h3 {
             font-size: 30px;
@@ -447,7 +464,7 @@
             transform: translateX(-50%);
         }
         #hardware-software-solutions .solution-box {
-            background: var(--tertiary-black);
+            background: var(--tertiary-navy);
             padding: 30px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
@@ -483,12 +500,12 @@
 
         /* Loan Calculator Section Styling */
         #loan-calculator {
-            background-color: rgba(23, 43, 77, 0.9); /* Consistent background with other secondary sections */
+            background-color: var(--secondary-navy); /* Consistent background with other secondary sections */
             padding: 80px 0;
         }
 
         #loan-calculator .card {
-            background: var(--primary-black); /* Darker card background */
+            background: var(--primary-navy); /* Darker card background */
             border: 1px solid var(--border-color);
             border-radius: 8px;
             box-shadow: 0px 0px 30px var(--shadow-color);
@@ -502,7 +519,7 @@
         }
 
         #loan-calculator .form-control {
-            background-color: var(--tertiary-black);
+            background-color: var(--tertiary-navy);
             border: 1px solid var(--border-color);
             color: var(--text-light);
             padding: 10px 15px;
@@ -525,15 +542,18 @@
             border-radius: 5px;
             font-weight: 600;
             transition: background-color 0.3s ease;
+            background: linear-gradient(to right, #007BFF, #00C1FF); /* Blue gradient from image */
+            border: none;
         }
 
         #loan-calculator .btn-primary:hover {
-            background-color: var(--accent-blue-hover);
-            border-color: var(--accent-blue-hover);
+            background-color: var(--accent-blue-dark);
+            border-color: var(--accent-blue-dark);
+            background: linear-gradient(to right, #0056b3, #0099CC);
         }
 
         #loan-calculator #monthlyPaymentResult {
-            background-color: var(--tertiary-black);
+            background-color: var(--tertiary-navy);
             border: 1px solid var(--border-color);
             padding: 15px;
             border-radius: 5px;
@@ -547,7 +567,7 @@
 
         /* About Us Section */
         #about {
-            background-color: rgba(10, 25, 47, 0.9);
+            background-color: var(--primary-navy);
         }
         #about p {
             color: var(--text-muted-light);
@@ -559,7 +579,7 @@
 
         /* Featured (Why Choose Us) Section */
         #why-choose-us {
-            background-color: rgba(23, 43, 77, 0.9);
+            background-color: var(--secondary-navy);
         }
 
         #why-choose-us .list-wrap {
@@ -616,7 +636,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background: var(--tertiary-black); /* Darker background for icons */
+            background: var(--tertiary-navy); /* Darker background for icons */
             color: var(--accent-blue);
             font-size: 32px;
         }
@@ -640,7 +660,7 @@
             justify-content: center;
             font-size: 14px;
             font-weight: 700;
-            border: 2px solid var(--primary-black); /* Border matches body background */
+            border: 2px solid var(--primary-navy); /* Border matches body background */
         }
 
         #why-choose-us .list-center-wrap {
@@ -657,7 +677,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background-color: var(--tertiary-black);
+            background-color: var(--tertiary-navy);
             box-shadow: 0px 0px 30px var(--shadow-color);
             border: 1px solid var(--border-color);
         }
@@ -669,7 +689,7 @@
 
         /* Portfolio Section */
         #portfolio {
-            background-color: rgba(10, 25, 47, 0.9);
+            background-color: var(--primary-navy);
         }
 
         .portfolio-isotope .portfolio-flters {
@@ -677,7 +697,7 @@
             padding: 0;
             margin: 0 auto 30px auto;
             text-align: center;
-            background: var(--secondary-black);
+            background: var(--secondary-navy);
             border-radius: 50px;
             padding: 2px 15px;
             width: fit-content;
@@ -711,7 +731,7 @@
         .portfolio-wrap {
             border-radius: 8px;
             overflow: hidden;
-            background: var(--secondary-black);
+            background: var(--secondary-navy);
             box-shadow: 0px 0px 30px var(--shadow-color);
             position: relative;
             border: 1px solid var(--border-color);
@@ -748,12 +768,12 @@
             transition: 0.3s;
         }
         .portfolio-info .project-btn .fill-btn:hover {
-            background: var(--accent-blue-hover);
+            background: var(--accent-blue-dark);
         }
 
         /* Testimonials Section */
         .testimonials {
-            background-color: rgba(23, 43, 77, 0.9);
+            background-color: var(--secondary-navy);
             padding-bottom: 80px;
         }
 
@@ -762,7 +782,7 @@
         }
 
         .testimonials .testimonial-item {
-            background: var(--primary-black);
+            background: var(--primary-navy);
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 0px 30px var(--shadow-color);
@@ -780,7 +800,7 @@
             width: 90px;
             border-radius: 50%;
             margin-right: 15px;
-            border: 4px solid var(--primary-black);
+            border: 4px solid var(--primary-navy);
             box-shadow: 0px 2px 15px var(--shadow-color);
         }
 
@@ -846,7 +866,7 @@
 
         /* Contact Section */
         #contact {
-            background-color: rgba(10, 25, 47, 0.9);
+            background-color: var(--primary-navy);
         }
 
         #contact .info-item {
@@ -860,7 +880,7 @@
         }
 
         #contact .php-email-form {
-            background: var(--secondary-black);
+            background: var(--secondary-navy);
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 0px 30px var(--shadow-color);
@@ -868,7 +888,7 @@
         }
         #contact .php-email-form input,
         #contact .php-email-form textarea {
-            background-color: var(--tertiary-black);
+            background-color: var(--tertiary-navy);
             border: 1px solid var(--border-color);
             color: var(--text-light);
         }
@@ -889,15 +909,18 @@
             padding: 10px 30px;
             transition: 0.3s;
             border-radius: 5px;
+            background: linear-gradient(to right, #007BFF, #00C1FF);
+            border: none;
         }
         #contact .php-email-form button[type="submit"]:hover {
-            background: var(--accent-blue-hover);
+            background: var(--accent-blue-dark);
+            background: linear-gradient(to right, #0056b3, #0099CC);
         }
 
 
         /* Footer */
         .footer {
-            background: var(--tertiary-black);
+            background: var(--tertiary-navy);
             padding: 30px 0;
             color: var(--text-muted-light);
             font-size: 14px;
@@ -967,7 +990,7 @@
 
         /* Modal specific styles */
         .modal-content {
-            background-color: var(--secondary-black);
+            background-color: var(--secondary-navy);
             border: 1px solid var(--border-color);
             color: var(--text-light);
         }
@@ -981,7 +1004,7 @@
         }
 
         .modal-body textarea {
-            background-color: var(--tertiary-black);
+            background-color: var(--tertiary-navy);
             border-color: var(--border-color);
             color: var(--text-light);
         }
@@ -999,7 +1022,7 @@
         }
 
         #solutionOutput, #seoContentOutput {
-            background-color: var(--tertiary-black);
+            background-color: var(--tertiary-navy);
             border: 1px solid var(--border-color);
             padding: 15px;
             border-radius: 5px;
@@ -1018,7 +1041,7 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="https://placehold.co/40x40/0A192F/FFD700?text=NDS" alt="Noor Digital Solution Logo">
+                <img src="uploaded:logo.png-a1b6a90c-bf7e-4d3a-8a8d-e3161d0c093b" alt="Noor Digital Solution Logo">
                 <h1>Noor Digital Solution</h1>
             </a>
 
@@ -1044,16 +1067,16 @@
         <div class="container position-relative">
             <div class="row gy-5" data-aos="fade-in">
                 <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-                    <h2>Your Partner in <span>Digital Excellence</span></h2>
-                    <p>Empowering businesses with cutting-edge IT solutions, custom software development, web design, digital marketing, and robust cybersecurity.</p>
+                    <h2>Empowering Your Business with <span>Digital Solutions</span></h2>
+                    <p>Your Partner in Digital Transformation</p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="#services-we-offer" class="btn-get-started">Our Services</a>
                         <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                     </div>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2">
-                    <!-- AI Technology Themed Image for Hero Section -->
-                    <img src="https://images.unsplash.com/photo-1574888124976-508b5f3d45ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHw0fHxhaSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzE5MjM0MTY0fDB8&ixlib=rb-4.0.3&q=80&w=1080" class="img-fluid" alt="AI Technology Concept" data-aos="zoom-out" data-aos-delay="100">
+                <div class="col-lg-6 order-1 order-lg-2 d-none d-lg-block">
+                    <!-- The person working on a laptop is part of the background now -->
+                    <!-- This image is removed as it's part of the hero background image now -->
                 </div>
             </div>
         </div>
