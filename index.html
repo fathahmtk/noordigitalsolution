@@ -56,6 +56,12 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             background-color: var(--primary-black);
+            /* High-class AI-themed background */
+            background-image: url('https://images.unsplash.com/photo-1620712948252-5a21be6c3116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwyMHx8YWklMjBtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzE5MjM0NTA3fDB8&ixlib=rb-4.0.3&q=80&w=1080'); /* Using an AI-themed image from Unsplash */
+            background-size: cover; /* Cover the entire background */
+            background-attachment: fixed; /* Keep background fixed while scrolling */
+            background-position: center center; /* Center the background image */
+            background-repeat: no-repeat; /* Do not repeat the background image */
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -158,7 +164,7 @@
         .hero {
             width: 100%;
             min-height: 100vh;
-            background: var(--primary-black);
+            background: rgba(10, 25, 47, 0.8); /* Darker overlay for readability */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -273,12 +279,14 @@
         section {
             padding: 80px 0;
             overflow: hidden;
+            /* Overlay for section backgrounds to ensure readability over the main body background */
+            background-color: rgba(10, 25, 47, 0.9); /* A slightly more opaque primary-black for sections */
         }
 
         .section-bg {
             background-color: var(--primary-black);
         }
-
+        
         .section-header {
             text-align: center;
             padding-bottom: 60px;
@@ -299,7 +307,7 @@
 
         /* Services We Offer & Specialized Solutions */
         .top-icon-box {
-            background-color: var(--secondary-black); /* Slightly lighter background for this section */
+            background-color: rgba(23, 43, 77, 0.9); /* A slightly more opaque secondary-black for this section */
         }
 
         .top-icon-box .icon-box {
@@ -417,7 +425,7 @@
 
         /* Hardware & Software Solutions Section */
         #hardware-software-solutions {
-            background-color: var(--primary-black);
+            background-color: rgba(10, 25, 47, 0.9);
         }
         #hardware-software-solutions .category-header h3 {
             font-size: 30px;
@@ -475,7 +483,7 @@
 
         /* Loan Calculator Section Styling */
         #loan-calculator {
-            background-color: var(--secondary-black); /* Consistent background with other secondary sections */
+            background-color: rgba(23, 43, 77, 0.9); /* Consistent background with other secondary sections */
             padding: 80px 0;
         }
 
@@ -539,7 +547,7 @@
 
         /* About Us Section */
         #about {
-            background-color: var(--primary-black);
+            background-color: rgba(10, 25, 47, 0.9);
         }
         #about p {
             color: var(--text-muted-light);
@@ -551,7 +559,7 @@
 
         /* Featured (Why Choose Us) Section */
         #why-choose-us {
-            background-color: var(--secondary-black);
+            background-color: rgba(23, 43, 77, 0.9);
         }
 
         #why-choose-us .list-wrap {
@@ -661,7 +669,7 @@
 
         /* Portfolio Section */
         #portfolio {
-            background-color: var(--primary-black);
+            background-color: rgba(10, 25, 47, 0.9);
         }
 
         .portfolio-isotope .portfolio-flters {
@@ -745,7 +753,7 @@
 
         /* Testimonials Section */
         .testimonials {
-            background-color: var(--secondary-black);
+            background-color: rgba(23, 43, 77, 0.9);
             padding-bottom: 80px;
         }
 
@@ -838,7 +846,7 @@
 
         /* Contact Section */
         #contact {
-            background-color: var(--primary-black);
+            background-color: rgba(10, 25, 47, 0.9);
         }
 
         #contact .info-item {
@@ -1083,6 +1091,10 @@
                             <div class="icon"><i class="fas fa-bullhorn"></i></div>
                             <h4 class="title"><a href="#services-we-offer">Digital Marketing & SEO</a></h4>
                             <p>Boosting your online visibility and reaching your target audience effectively.</p>
+                            <!-- SEO Content Idea Generator Button -->
+                            <button type="button" class="btn btn-outline-light btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#seoContentModal">
+                                Generate SEO Ideas ✨
+                            </button>
                         </div>
                     </div><!--End Icon Box -->
 
@@ -1151,7 +1163,7 @@
                         </div>
                     </div><!-- End Service Item -->
 
-                    <!-- NEW Service Item: Accounting Software Solutions -->
+                    <!-- Accounting Software Solutions -->
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-calculator"></i></div>
@@ -1159,6 +1171,18 @@
                             <p>Implementing and customizing robust accounting software to streamline your financial operations and reporting.</p>
                         </div>
                     </div><!-- End Service Item -->
+
+                    <!-- NEW AI Service Suggester Card -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+                        <div class="icon-box">
+                            <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                            <h4 class="title">AI Service Suggester</h4>
+                            <p>Let our AI help you discover the perfect digital solutions for your business needs.</p>
+                            <button type="button" class="btn btn-outline-light btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#serviceSuggestorModal">
+                                Get AI Suggestions ✨
+                            </button>
+                        </div>
+                    </div><!-- End AI Service Suggester Card -->
 
                 </div>
 
@@ -1425,7 +1449,7 @@
                                     <h4>Social Media Campaign</h4>
                                     <p>Marketing</p>
                                     <div class="project-btn">
-                                        <a href="https://images.unsplash.com/photo-1582213782179-e0d53f02e94d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxNXx8YWklMjBtYXJrZXRpbmd8ZW58MHx8fHwxNzE5MjM0NDg2fDB8&ixlib=rb-4.0.3&q=80&w=1080" data-gallery="portfolio-gallery" class="glightbox preview-link" title="Marketing Campaign 1"><i class="fas fa-search-plus"></i></a>
+                                        <a href="https://images.unsplash.com/photo-1582213782179-e0d53f02e94d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxNXx8YWklMjBtYXJrZXRpbmd8ZW58MHx8fHwxNzE5MjM0NDg2fDA&ixlib=rb-4.0.3&q=80&w=1080" data-gallery="portfolio-gallery" class="glightbox preview-link" title="Marketing Campaign 1"><i class="fas fa-search-plus"></i></a>
                                         <a href="#" class="details-link fill-btn" title="More Details">Details</a>
                                     </div>
                                 </div>
@@ -1641,6 +1665,8 @@
                         <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Mobile Application Development</a></li>
                         <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> IT Consulting & Support</a></li>
                         <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Accounting Software Solutions</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#serviceSuggestorModal"><i class="fas fa-chevron-right"></i> AI Service Suggester</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#seoContentModal"><i class="fas fa-chevron-right"></i> AI SEO Idea Generator</a></li>
                     </ul>
                 </div>
 
@@ -1663,6 +1689,62 @@
     </footer><!-- End Footer -->
 
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- AI Service Suggestor Modal -->
+    <div class="modal fade" id="serviceSuggestorModal" tabindex="-1" aria-labelledby="serviceSuggestorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceSuggestorModalLabel">AI Service Suggester ✨</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="businessDescription" class="form-label">Describe your business or needs:</label>
+                        <textarea class="form-control" id="businessDescription" rows="5" placeholder="e.g., 'A small retail shop needing help with inventory management and online sales.' or 'A healthcare clinic looking for better patient data security.'"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary w-100" id="getServiceSuggestionsBtn">Get AI Suggestions</button>
+                    <div id="serviceSuggestionLoading" class="text-center mt-3 d-none">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">Generating suggestions, please wait...</p>
+                    </div>
+                    <div id="serviceSuggestionOutput" class="mt-3">
+                        <!-- AI Suggestions will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO Content Idea Generator Modal -->
+    <div class="modal fade" id="seoContentModal" tabindex="-1" aria-labelledby="seoContentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="seoContentModalLabel">AI SEO Content Idea Generator ✨</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="seoKeywordInput" class="form-label">Enter a primary keyword:</label>
+                        <input type="text" class="form-control" id="seoKeywordInput" placeholder="e.g., 'cloud computing for small business'">
+                    </div>
+                    <button type="button" class="btn btn-primary w-100" id="getSeoIdeasBtn">Generate SEO Ideas</button>
+                    <div id="seoLoading" class="text-center mt-3 d-none">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2">Generating SEO ideas, please wait...</p>
+                    </div>
+                    <div id="seoContentOutput" class="mt-3">
+                        <!-- AI SEO ideas will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Vendor JS Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -1789,8 +1871,75 @@
             document.addEventListener('load', toggleScrollTop);
             document.addEventListener('scroll', toggleScrollTop);
 
+            // Function to call Gemini API
+            async function callGeminiAPI(prompt, outputElementId, loadingElementId) {
+                const outputElement = document.getElementById(outputElementId);
+                const loadingElement = document.getElementById(loadingElementId);
+
+                outputElement.innerHTML = ''; // Clear previous output
+                loadingElement.classList.remove('d-none'); // Show loading spinner
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Leave as-is, Canvas will provide it at runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        outputElement.innerHTML = marked.parse(text); // Use marked.js for Markdown to HTML
+                    } else {
+                        outputElement.innerHTML = '<p class="text-danger">Error: Could not get a valid response from the AI.</p>';
+                    }
+                } catch (error) {
+                    console.error("Error calling Gemini API:", error);
+                    outputElement.innerHTML = '<p class="text-danger">Error: Failed to connect to the AI service. Please try again.</p>';
+                } finally {
+                    loadingElement.classList.add('d-none'); // Hide loading spinner
+                }
+            }
+
+            // AI Service Suggester Logic
+            const getServiceSuggestionsBtn = document.getElementById('getServiceSuggestionsBtn');
+            if (getServiceSuggestionsBtn) {
+                getServiceSuggestionsBtn.addEventListener('click', function() {
+                    const businessDescription = document.getElementById('businessDescription').value;
+                    if (businessDescription.trim() === "") {
+                        document.getElementById('serviceSuggestionOutput').innerHTML = '<p class="text-warning">Please describe your business or needs to get suggestions.</p>';
+                        return;
+                    }
+                    const prompt = `Given the following business description, suggest relevant IT and digital solutions that Noor Digital Solution can offer. Focus on services like IT infrastructure, cybersecurity, cloud computing, business intelligence, mobile app development, web development, digital marketing, ERP, POS, biometric systems, data storage, and accounting software. Format the response as a bulleted list of services with a brief explanation for each service. \n\nBusiness Description: ${businessDescription}`;
+                    callGeminiAPI(prompt, 'serviceSuggestionOutput', 'serviceSuggestionLoading');
+                });
+            }
+
+            // SEO Content Idea Generator Logic
+            const getSeoIdeasBtn = document.getElementById('getSeoIdeasBtn');
+            if (getSeoIdeasBtn) {
+                getSeoIdeasBtn.addEventListener('click', function() {
+                    const seoKeyword = document.getElementById('seoKeywordInput').value;
+                    if (seoKeyword.trim() === "") {
+                        document.getElementById('seoContentOutput').innerHTML = '<p class="text-warning">Please enter a keyword to generate SEO ideas.</p>';
+                        return;
+                    }
+                    const prompt = `For the keyword '${seoKeyword}', generate 3-5 SEO-friendly blog post titles, a concise meta description (under 160 characters), and 3-5 related keywords. Format the response clearly with bold headings for each section (Blog Titles, Meta Description, Related Keywords).`;
+                    callGeminiAPI(prompt, 'seoContentOutput', 'seoLoading');
+                });
+            }
         });
     </script>
+    <!-- Add Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 </body>
 </html>
