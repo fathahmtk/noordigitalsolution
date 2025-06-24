@@ -4,61 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noor Digital Solution - Your Partner in Digital Excellence</title>
-    <!-- Updated meta description for SEO -->
     <meta name="description" content="Noor Digital Solution offers comprehensive IT solutions, custom software, POS, ERP, web development, digital marketing, and cybersecurity services to empower your business.">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self';
-        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.gstatic.com https://code.jquery.com https://cdn.jsdelivr.net https://unpkg.com https://cdnjs.cloudflare.com https://www.youtube.com https://www.googletagmanager.com;
-        style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com https://cdnjs.cloudflare.com https://fonts.googleapis.com;
-        img-src 'self' data: https://placehold.co https://images.unsplash.com uploaded:;
-        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-        connect-src 'self' https://www.google-analytics.com https://generativelanguage.googleapis.com https://*.google.com https://*.firebase.com https://*.firebaseio.com https://*.app-measurement.com https://firebase.googleapis.com https://www.googletagmanager.com https://firebaseinstallations.googleapis.com https://www.gstatic.com;
-        frame-src https://www.youtube.com;
-        media-src 'self';
-    ">
-    <meta content="Noor Digital Solution" name="author">
-
-    <!-- Favicons (using placeholders for now, can be replaced with actual logo favicon) -->
-    <link href="https://placehold.co/16x16/0A192F/FFD700?text=NDS" rel="icon">
-    <link href="https://placehold.co/180x180/0A192F/FFD700?text=NDS" rel="apple-touch-icon">
-
-    <!-- Google Fonts: Poppins and Open Sans -->
+    <meta name="author" content="Noor Digital Solution">
+    
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Vendor CSS Files (via CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5KwDFWqQ58S9xtlsVFS3chFIJb8mK+bV/S9+9NfVf48V+Q6/F+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <style>
-        /* New Theme Color Variables: Blue, Golden, Black */
         :root {
-            --primary-navy: #0D2040; /* Deep dark blue/navy from the image background */
-            --secondary-navy: #1A3464; /* Slightly lighter navy for cards/elements */
-            --tertiary-navy: #294A80; /* Even lighter for input fields or subtle highlights */
-            --accent-blue: #007BFF; /* Vibrant blue for highlights and button gradients */
-            --accent-blue-dark: #0056b3; /* Darker blue on hover */
-            --accent-golden: #FFC107; /* Vibrant golden/orange accent */
-            --text-light: #F8F9FA; /* White for primary text */
-            --text-muted-light: #CED4DA; /* Light grey for secondary text */
-            --border-color: rgba(54, 79, 107, 0.5); /* Border color to match the theme with transparency */
-            --shadow-color: rgba(0, 0, 0, 0.4); /* Softer shadow */
+            --primary-navy: #0D2040;
+            --secondary-navy: #1A3464;
+            --tertiary-navy: #294A80;
+            --accent-blue: #007BFF;
+            --accent-blue-dark: #0056b3;
+            --accent-golden: #FFC107;
+            --accent-golden-light: #FFD54F;
+            --text-light: #F8F9FA;
+            --text-muted-light: #CED4DA;
+            --border-color: rgba(54, 79, 107, 0.5);
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --transition: all 0.3s ease-in-out;
         }
 
-        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: "Open Sans", sans-serif;
             color: var(--text-light);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: var(--primary-navy); /* Main background color */
-            background-attachment: fixed; /* Keep background fixed while scrolling */
-            background-position: center center; /* Center the background image */
-            background-repeat: no-repeat; /* Do not repeat the background image */
+            background-color: var(--primary-navy);
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -69,1900 +52,1439 @@
         a {
             color: var(--accent-blue);
             text-decoration: none;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
         a:hover {
             color: var(--accent-blue-dark);
         }
 
-        /* Header Specific Styles */
-        #header {
-            background: var(--secondary-navy);
-            padding: 15px 0; /* Slightly reduced padding */
-            box-shadow: 0px 2px 15px var(--shadow-color);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            transition: all 0.3s ease-in-out;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        #header .logo img {
-            max-height: 40px; /* Adjust logo size */
-            margin-right: 10px;
-        }
-
-        #header .logo h1 {
-            font-size: 28px;
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--text-light);
-        }
-
-        #header .navbar ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
-
-        #header .navbar li {
-            position: relative;
-        }
-
-        #header .navbar a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 15px;
-            font-family: "Poppins", sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--text-muted-light);
-            white-space: nowrap;
-            transition: 0.3s;
-        }
-
-        #header .navbar a:hover,
-        #header .navbar .active,
-        #header .navbar .active:focus,
-        #header .navbar li:hover > a {
-            color: var(--accent-blue);
-        }
-
-        .btn-get-started {
-            font-family: "Poppins", sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            letter-spacing: 1px;
-            display: inline-block;
-            padding: 10px 35px;
-            border-radius: 50px;
-            transition: 0.5s;
-            color: #fff;
-            background: linear-gradient(to right, #007BFF, #00C1FF); /* Blue gradient from image */
-            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-            margin-left: 20px;
-            border: none; /* Ensure no default border */
-        }
-
-        .btn-get-started:hover {
-            background: linear-gradient(to right, #0056b3, #0099CC); /* Darker gradient on hover */
-            color: #fff;
-        }
-
-        /* Hero Section Styles */
-        .hero {
+        .container {
             width: 100%;
-            min-height: 100vh;
-            /* Background from the provided image */
-            background: linear-gradient(to bottom, rgba(13, 32, 64, 0.9), rgba(13, 32, 64, 0.9)), url('https://images.unsplash.com/photo-1517036601147-38668984a9e5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
-            background-size: cover; /* Cover the entire background */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
             position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.2); /* Dark overlay for text readability */
-            z-index: 1;
         }
 
-        .hero .container {
-            z-index: 2; /* Ensure content is above overlay */
-        }
-
-
-        .hero h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-
-        .hero h2 span {
-            color: var(--accent-golden); /* Golden accent for hero text */
-        }
-
-        .hero p {
-            color: var(--text-muted-light);
-            margin-bottom: 30px;
-            font-size: 20px;
-        }
-
-        .hero .btn-get-started {
-            background: linear-gradient(to right, var(--accent-blue), #00C1FF); /* Blue gradient from image */
-            color: #fff;
-            border: 0;
-            padding: 12px 30px;
-            margin-right: 15px;
-        }
-
-        .hero .btn-get-started:hover {
-            background: linear-gradient(to right, var(--accent-blue-dark), #0099CC);
-        }
-
-        .hero .btn-watch-video {
-            font-size: 16px;
-            color: var(--text-light);
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .hero .btn-watch-video i {
-            font-size: 32px;
-            line-height: 0;
-            color: var(--accent-golden); /* Golden play icon */
-            margin-right: 8px;
-        }
-
-        .hero .btn-watch-video:hover {
-            color: var(--accent-golden);
-        }
-
-        .hero img {
-            /* This image in the hero is now part of the content, not background */
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            position: relative; /* Ensure it's above the hero overlay */
-            z-index: 2;
-        }
-
-        /* Hero Icon Boxes (under Hero) */
-        .icon-boxes {
-            position: relative;
-            margin-top: -100px;
-            z-index: 2;
-        }
-
-        .icon-boxes .icon-box {
-            background: var(--secondary-navy);
-            padding: 40px 30px;
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            border-radius: 8px;
-            text-align: center;
-            transition: 0.3s ease-in-out;
-            height: 100%;
-            border: 1px solid var(--border-color);
-        }
-
-        .icon-boxes .icon-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 0px 45px var(--shadow-color);
-        }
-
-        .icon-boxes .icon-box .icon {
-            font-size: 40px;
-            line-height: 1;
-            color: var(--accent-golden); /* Golden icons */
-            margin-bottom: 15px;
-        }
-
-        .icon-boxes .icon-box h4 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-
-        .icon-boxes .icon-box h4 a {
-            color: var(--text-light);
-        }
-
-        .icon-boxes .icon-box h4 a:hover {
-            color: var(--accent-golden);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 80px 0;
-            overflow: hidden;
-            background-color: var(--primary-navy); /* Solid primary navy for sections */
-        }
-
-        .section-bg {
-            background-color: var(--primary-navy); /* Consistency */
-        }
-        
         .section-header {
             text-align: center;
             padding-bottom: 60px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .section-header h2 {
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 700;
             margin-bottom: 20px;
-            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-golden);
+            border-radius: 2px;
         }
 
         .section-header p {
             margin-bottom: 0;
             color: var(--text-muted-light);
-            font-size: 16px;
-        }
-
-        /* Services We Offer & Specialized Solutions */
-        .top-icon-box {
-            background-color: var(--secondary-navy); /* Solid secondary navy for this section */
-        }
-
-        .top-icon-box .icon-box {
-            background: var(--primary-navy); /* Darker card background within this section */
-            padding: 40px 30px;
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            border-radius: 8px;
-            text-align: center;
-            transition: 0.3s ease-in-out;
-            height: 100%;
-            border: 1px solid var(--border-color);
-        }
-
-        .top-icon-box .icon-box .icon i {
-            font-size: 40px;
-            color: var(--accent-golden); /* Golden icons for services */
-            margin-bottom: 15px;
-            display: block;
-        }
-        .top-icon-box .icon-box h4 {
-            color: var(--text-light);
-        }
-        .top-icon-box .icon-box p {
-            color: var(--text-muted-light);
-        }
-
-        /* Dedicated Specialized Solutions Section (New) */
-        #specialized-solutions .category-header {
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 30px;
-        }
-        #specialized-solutions .category-header h3 {
-            font-size: 30px;
-            font-weight: 700;
-            color: var(--accent-blue);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        #specialized-solutions .category-header h3::after {
-            content: '';
-            position: absolute;
-            display: block; /* Ensure the pseudo-element is a block for width/height */
-            width: 60px;
-            height: 3px;
-            background: var(--accent-golden);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        #specialized-solutions .industry-box {
-            background: var(--tertiary-navy); /* Darkest card background for industry specific */
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0px 0px 20px var(--shadow-color);
-            text-align: center;
-            transition: 0.3s ease-in-out;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        #specialized-solutions .industry-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 0px 35px var(--shadow-color);
-        }
-        #specialized-solutions .industry-box .icon {
-            font-size: 48px;
-            color: var(--accent-golden); /* Golden icons */
-            margin-bottom: 15px;
-        }
-        #specialized-solutions .industry-box h5 {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 10px;
-        }
-        #specialized-solutions .industry-box p {
-            font-size: 15px;
-            color: var(--text-muted-light);
-            margin-bottom: 0;
-        }
-        #specialized-solutions .erp-solution {
-            background: var(--secondary-navy); /* Distinct background for ERP */
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        #specialized-solutions .erp-solution .icon {
-            font-size: 60px;
-            color: var(--accent-blue);
-            margin-bottom: 20px;
-        }
-        #specialized-solutions .erp-solution h4 {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-        #specialized-solutions .erp-solution p {
-            color: var(--text-muted-light);
             font-size: 18px;
+            line-height: 1.8;
         }
 
-        /* Hardware & Software Solutions Section */
-        #hardware-software-solutions {
-            background-color: var(--primary-navy);
-        }
-        #hardware-software-solutions .category-header h3 {
-            font-size: 30px;
-            font-weight: 700;
-            color: var(--accent-blue);
-            position: relative;
+        .btn {
             display: inline-block;
-            padding-bottom: 10px;
-        }
-        #hardware-software-solutions .category-header h3::after {
-            content: '';
-            position: absolute;
-            display: block; /* Ensure the pseudo-element is a block for width/height */
-            width: 60px;
-            height: 3px;
-            background: var(--accent-golden);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        #hardware-software-solutions .solution-box {
-            background: var(--tertiary-navy);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0px 0px 20px var(--shadow-color);
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
             text-align: center;
-            transition: 0.3s ease-in-out;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        #hardware-software-solutions .solution-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 0px 35px var(--shadow-color);
-        }
-        #hardware-software-solutions .solution-box .icon {
-            font-size: 50px;
-            color: var(--accent-golden);
-            margin-bottom: 15px;
-        }
-        #hardware-software-solutions .solution-box h5 {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 10px;
-        }
-        #hardware-software-solutions .solution-box p {
-            font-size: 15px;
-            color: var(--text-muted-light);
-            margin-bottom: 0;
-        }
-
-        /* Loan Calculator Section Styling */
-        #loan-calculator {
-            background-color: var(--secondary-navy); /* Consistent background with other secondary sections */
-            padding: 80px 0;
-        }
-
-        #loan-calculator .card {
-            background: var(--primary-navy); /* Darker card background */
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            padding: 30px;
-            color: var(--text-light);
-        }
-
-        #loan-calculator .form-label {
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        #loan-calculator .form-control {
-            background-color: var(--tertiary-navy);
-            border: 1px solid var(--border-color);
-            color: var(--text-light);
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        #loan-calculator .form-control::placeholder {
-            color: var(--text-muted-light);
-        }
-
-        #loan-calculator .form-control:focus {
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
-        }
-
-        #loan-calculator .btn-primary {
-            background-color: var(--accent-blue);
-            border-color: var(--accent-blue);
-            padding: 10px 25px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-            background: linear-gradient(to right, #007BFF, #00C1FF); /* Blue gradient from image */
+            cursor: pointer;
+            transition: var(--transition);
             border: none;
         }
 
-        #loan-calculator .btn-primary:hover {
-            background-color: var(--accent-blue-dark);
-            border-color: var(--accent-blue-dark);
-            background: linear-gradient(to right, #0056b3, #0099CC);
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
         }
 
-        #loan-calculator #monthlyPaymentResult {
-            background-color: var(--tertiary-navy);
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--accent-golden); /* Highlight result with golden color */
-            text-align: center;
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-blue-dark), var(--accent-blue));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
         }
 
-
-        /* About Us Section */
-        #about {
-            background-color: var(--primary-navy);
-        }
-        #about p {
-            color: var(--text-muted-light);
-        }
-        #about img {
-            border: 1px solid var(--border-color);
-            box-shadow: 0px 0px 20px var(--shadow-color);
-        }
-
-        /* Featured (Why Choose Us) Section */
-        #why-choose-us {
-            background-color: var(--secondary-navy);
-        }
-
-        #why-choose-us .list-wrap {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        #why-choose-us .list-wrap:last-child {
-            border-bottom: none;
-        }
-
-        #why-choose-us .list-wrap .description {
-            flex-grow: 1;
-            padding-right: 20px;
-            text-align: right;
-            color: var(--text-muted-light);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        #why-choose-us .list-wrap.right .description {
-            text-align: left;
-            padding-left: 20px;
-            padding-right: 0;
-        }
-
-
-        #why-choose-us .list-wrap h4 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--text-light);
-        }
-
-        #why-choose-us .list-wrap h4 span {
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-golden);
             color: var(--accent-golden);
         }
 
-        #why-choose-us .list-wrap p {
-            font-size: 15px;
-            color: var(--text-muted-light);
-            margin-bottom: 0;
+        .btn-outline:hover {
+            background: var(--accent-golden);
+            color: var(--primary-navy);
+            transform: translateY(-3px);
         }
 
-        #why-choose-us .list-wrap .icon {
-            width: 80px;
-            height: 80px;
-            min-width: 80px;
-            min-height: 80px;
-            border: 2px solid var(--accent-golden);
-            border-radius: 50%;
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(13, 32, 64, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            padding: 15px 0;
+            background: rgba(13, 32, 64, 0.98);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            background: var(--tertiary-navy); /* Darker background for icons */
-            color: var(--accent-blue);
-            font-size: 32px;
         }
 
-        #why-choose-us .list-wrap .icon img {
-            max-width: 50px;
-            height: auto;
-        }
-
-        #why-choose-us .list-wrap .icon small {
-            position: absolute;
-            bottom: -10px;
-            right: -10px;
-            background: var(--accent-blue);
-            color: #fff;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: 700;
-            border: 2px solid var(--primary-navy); /* Border matches body background */
-        }
-
-        #why-choose-us .list-center-wrap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        #why-choose-us .list-center-wrap .center-icon {
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: var(--tertiary-navy);
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            border: 1px solid var(--border-color);
-        }
-
-        #why-choose-us .list-center-wrap .center-icon img {
-            max-width: 100px;
-            height: auto;
-        }
-
-        /* Portfolio Section */
-        #portfolio {
-            background-color: var(--primary-navy);
-        }
-
-        .portfolio-isotope .portfolio-flters {
-            list-style: none;
-            padding: 0;
-            margin: 0 auto 30px auto;
-            text-align: center;
-            background: var(--secondary-navy);
-            border-radius: 50px;
-            padding: 2px 15px;
-            width: fit-content;
-            box-shadow: 0px 0px 20px var(--shadow-color);
-            display: flex;
-            justify-content: center;
-        }
-
-        .portfolio-isotope .portfolio-flters li {
-            cursor: pointer;
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--text-muted-light);
-            transition: all 0.3s ease-in-out;
-            border-radius: 50px;
-        }
-
-        .portfolio-isotope .portfolio-flters li:hover,
-        .portfolio-isotope .portfolio-flters li.filter-active {
-            color: #fff;
-            background: var(--accent-blue);
-        }
-
-        .portfolio-isotope .portfolio-item {
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .portfolio-wrap {
-            border-radius: 8px;
-            overflow: hidden;
-            background: var(--secondary-navy);
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            position: relative;
-            border: 1px solid var(--border-color);
-        }
-
-        .portfolio-wrap img {
-            transition: all 0.6s ease-in-out;
-            transform: scale(1.0);
-        }
-
-        .portfolio-wrap:hover img {
-            transform: scale(1.1);
-        }
-
-        .portfolio-info {
-            padding: 20px 15px;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .portfolio-info h4 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-light);
-        }
-
-        .portfolio-info .project-btn .fill-btn {
-            background: var(--accent-blue);
-            color: #fff;
-            padding: 8px 20px;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-        .portfolio-info .project-btn .fill-btn:hover {
-            background: var(--accent-blue-dark);
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: var(--secondary-navy);
-            padding-bottom: 80px;
-        }
-
-        .testimonials .testimonial-wrap {
-            text-align: center;
-        }
-
-        .testimonials .testimonial-item {
-            background: var(--primary-navy);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 30px var(--shadow-color);
-            margin: 0 10px;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted-light);
-        }
-
-        .testimonials .testimonial-item .info-box {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .testimonials .testimonial-item .testimonial-img {
-            width: 90px;
-            border-radius: 50%;
+        .logo img {
+            height: 50px;
             margin-right: 15px;
-            border: 4px solid var(--primary-navy);
-            box-shadow: 0px 2px 15px var(--shadow-color);
         }
 
-        .testimonials .testimonial-item h3 {
-            font-size: 20px;
+        .logo h1 {
+            font-size: 28px;
             font-weight: 700;
-            margin: 0 0 5px 0;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .logo span {
+            color: var(--accent-golden);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-golden);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after,
+        .nav-menu a.active:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(13, 32, 64, 0.9), rgba(13, 32, 64, 0.95));
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 500px;
+            padding-right: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 500px;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-text h1 span {
+            color: var(--accent-golden);
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: var(--text-muted-light);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--secondary-navy);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-dark));
+        }
+
+        .service-icon i {
+            font-size: 50px;
+            color: white;
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--accent-golden);
+        }
+
+        .service-content p {
+            color: var(--text-muted-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* Specialized Solutions */
+        .solutions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .solution-card {
+            background: var(--secondary-navy);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .solution-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent-golden);
+        }
+
+        .solution-card h3 {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            margin-bottom: 20px;
             color: var(--text-light);
         }
 
-        .testimonials .testimonial-item h4 {
-            font-size: 14px;
+        .solution-card h3 i {
+            margin-right: 15px;
+            color: var(--accent-golden);
+            font-size: 28px;
+        }
+
+        .solution-card p {
             color: var(--text-muted-light);
-            margin: 0;
+            margin-bottom: 25px;
+            line-height: 1.7;
         }
 
-        .testimonials .testimonial-item .stars {
-            margin-top: 10px;
+        /* Loan Calculator */
+        .calculator-container {
+            background: var(--secondary-navy);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
         }
 
-        .testimonials .testimonial-item .stars i {
-            color: var(--accent-golden); /* Golden stars */
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--tertiary-navy);
+            color: var(--text-light);
             font-size: 16px;
+            transition: var(--transition);
         }
 
-        .testimonials .testimonial-item p {
-            font-style: italic;
-            margin: 0;
-            padding: 0;
-            text-align: left;
+        .form-control:focus {
+            border-color: var(--accent-blue);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        .result-container {
+            background: var(--tertiary-navy);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .result-container h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
             color: var(--text-muted-light);
         }
 
-        .testimonials .testimonial-item .quote-icon-left,
-        .testimonials .testimonial-item .quote-icon-right {
-            font-size: 26px;
-            color: var(--border-color);
+        .result-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent-golden);
         }
 
-        .testimonials .testimonial-item .quote-icon-left {
-            margin-right: 6px;
-        }
-        .testimonials .testimonial-item .quote-icon-right {
-            margin-left: 6px;
-        }
-
-        .swiper-pagination {
-            margin-top: 20px;
-            position: static !important;
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .swiper-pagination .swiper-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            background-color: var(--border-color);
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            height: 300px;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 32, 64, 0.85);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
             opacity: 1;
         }
 
-        .swiper-pagination .swiper-pagination-bullet-active {
-            background-color: var(--accent-blue);
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
         }
 
-
-        /* Contact Section */
-        #contact {
-            background-color: var(--primary-navy);
+        .portfolio-overlay h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--accent-golden);
+            text-align: center;
         }
 
-        #contact .info-item {
+        .portfolio-overlay p {
             color: var(--text-muted-light);
-        }
-        #contact .info-item h4 {
-            color: var(--text-light);
-        }
-        #contact .info-item i {
-            color: var(--accent-golden); /* Golden icons */
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        #contact .php-email-form {
+        /* Testimonials */
+        .testimonials-container {
+            max-width: 900px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        .testimonial-card {
             background: var(--secondary-navy);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 30px var(--shadow-color);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 20px;
             border: 1px solid var(--border-color);
+            position: relative;
         }
-        #contact .php-email-form input,
-        #contact .php-email-form textarea {
-            background-color: var(--tertiary-navy);
-            border: 1px solid var(--border-color);
-            color: var(--text-light);
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--accent-golden);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
         }
-        #contact .php-email-form input::placeholder,
-        #contact .php-email-form textarea::placeholder {
+
+        .testimonial-content {
+            margin-bottom: 25px;
             color: var(--text-muted-light);
-        }
-        #contact .php-email-form input:focus,
-        #contact .php-email-form textarea:focus {
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+            font-size: 18px;
+            line-height: 1.8;
+            font-style: italic;
         }
 
-        #contact .php-email-form button[type="submit"] {
-            background: var(--accent-blue);
-            color: #fff;
-            border: 0;
-            padding: 10px 30px;
-            transition: 0.3s;
-            border-radius: 5px;
-            background: linear-gradient(to right, #007BFF, #00C1FF);
-            border: none;
-        }
-        #contact .php-email-form button[type="submit"]:hover {
-            background: var(--accent-blue-dark);
-            background: linear-gradient(to right, #0056b3, #0099CC);
+        .testimonial-author {
+            display: flex;
+            align-items: center;
         }
 
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 3px solid var(--accent-golden);
+        }
+
+        .author-info h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--accent-golden);
+            font-size: 16px;
+        }
+
+        .stars {
+            color: var(--accent-golden);
+            margin-top: 5px;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            background: var(--secondary-navy);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--accent-golden);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-info h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-golden);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: var(--accent-golden);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--text-muted-light);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .contact-text a:hover {
+            color: var(--accent-golden);
+        }
+
+        .contact-form {
+            background: var(--secondary-navy);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group-full {
+            grid-column: span 2;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
 
         /* Footer */
         .footer {
             background: var(--tertiary-navy);
-            padding: 30px 0;
+            padding: 70px 0 30px;
+            position: relative;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            font-size: 20px;
+            color: var(--accent-golden);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-golden);
+        }
+
+        .footer-col p {
             color: var(--text-muted-light);
-            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--secondary-navy);
+            color: var(--accent-golden);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-golden);
+            color: var(--primary-navy);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted-light);
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--accent-golden);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-golden);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
             text-align: center;
+            padding-top: 30px;
             border-top: 1px solid var(--border-color);
         }
 
-        .footer .copyright {
-            margin-bottom: 5px;
-            color: var(--text-light);
-        }
-        /* Footer Links Specific Styling */
-        .footer .footer-links {
-            text-align: left; /* Align links to the left */
-        }
-
-        .footer .footer-links h4 {
+        .copyright {
+            color: var(--text-muted-light);
             font-size: 16px;
-            font-weight: 700;
-            color: var(--text-light);
-            position: relative;
-            padding-bottom: 12px;
         }
 
-        .footer .footer-links h4::after {
-            content: '';
-            position: absolute;
-            display: block;
-            width: 40px;
-            height: 2px;
-            background: var(--accent-golden);
-            bottom: 0;
-            left: 0;
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
         }
 
-        .footer .footer-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .footer .footer-links ul li {
-            padding: 8px 0;
+        .back-to-top:hover {
+            background: var(--accent-blue-dark);
+            transform: translateY(-5px);
         }
 
-        .footer .footer-links ul li:first-child {
-            padding-top: 0;
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-text h1 {
+                font-size: 48px;
+            }
         }
 
-        .footer .footer-links ul li a {
-            color: var(--text-muted-light);
-            transition: 0.3s;
-            display: inline-block;
-            line-height: 1;
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 280px;
+                height: calc(100vh - 80px);
+                background: var(--secondary-navy);
+                flex-direction: column;
+                padding: 40px 0;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 0;
+            }
+
+            .nav-menu a {
+                padding: 15px 30px;
+                display: block;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                min-width: 100%;
+                margin-bottom: 50px;
+                text-align: center;
+            }
+
+            .hero-image {
+                min-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group-full {
+                grid-column: span 1;
+            }
         }
 
-        .footer .footer-links ul li a:hover {
-            color: var(--accent-blue);
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text p {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+            }
         }
 
-        .footer .footer-links ul li a i {
-            padding-right: 2px;
-            color: var(--accent-golden); /* Golden checkmark */
-            font-size: 12px;
-            line-height: 0;
-        }
+        @media (max-width: 576px) {
+            .logo h1 {
+                font-size: 24px;
+            }
 
-        /* Modal specific styles */
-        .modal-content {
-            background-color: var(--secondary-navy);
-            border: 1px solid var(--border-color);
-            color: var(--text-light);
-        }
+            .hero-text h1 {
+                font-size: 32px;
+            }
 
-        .modal-header {
-            border-bottom-color: var(--border-color);
-        }
+            .section-header h2 {
+                font-size: 32px;
+            }
 
-        .modal-title {
-            color: var(--text-light);
-        }
-
-        .modal-body textarea {
-            background-color: var(--tertiary-navy);
-            border-color: var(--border-color);
-            color: var(--text-light);
-        }
-
-        .modal-body textarea::placeholder {
-            color: var(--text-muted-light);
-        }
-
-        .modal-footer {
-            border-top-color: var(--border-color);
-        }
-
-        .spinner-border {
-            color: var(--accent-blue) !important;
-        }
-
-        #solutionOutput, #seoContentOutput {
-            background-color: var(--tertiary-navy);
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            border-radius: 5px;
-            min-height: 100px;
-            color: var(--text-light);
-            margin-top: 20px;
-            white-space: pre-wrap; /* Preserve whitespace and break lines */
-            word-wrap: break-word; /* Break long words */
+            .testimonial-card {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header Section -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="uploaded:logo.png-a1b6a90c-bf7e-4d3a-8a8d-e3161d0c093b" alt="Noor Digital Solution Logo">
-                <h1>Noor Digital Solution</h1>
-            </a>
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#services-we-offer">Services</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-
-            <a class="btn-get-started scrollto" href="#contact">Get Started</a>
-
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwyfHxkaWdpdGFsJTIwc29sdXRpb24lMjBsb2dvfGVufDB8fHx8MTcxOTM0ODA0Nnww&ixlib=rb-4.0.3&q=80&w=400" alt="Noor Digital Solution Logo">
+                <h1>Noor <span>Digital</span> Solution</h1>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-    </header><!-- End Header -->
+    </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container position-relative">
-            <div class="row gy-5" data-aos="fade-in">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-                    <h2>Empowering Your Business with <span>Digital Solutions</span></h2>
-                    <p>Your Partner in Digital Transformation</p>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#services-we-offer" class="btn-get-started">Our Services</a>
-                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+    <section id="hero" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Empowering Your Business with <span>Digital Excellence</span></h1>
+                    <p>Your trusted partner for comprehensive IT solutions, custom software, web development, and digital transformation services in Qatar.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn btn-primary">Explore Services</a>
+                        <a href="#contact" class="btn btn-outline">Get in Touch</a>
                     </div>
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2 d-none d-lg-block">
-                    <!-- The person working on a laptop is part of the background now -->
-                    <!-- This image is removed as it's part of the hero background image now -->
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwzfHxkaWdpdGFsJTIwdHJhbnNmb3JtYXRpb258ZW58MHx8fHwxNzE5MzQ4MDQ3fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Digital Transformation">
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="icon-boxes position-absolute top-100 start-50 translate-middle w-75">
-            <div class="container">
-                <div class="row gy-4">
-
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-desktop"></i></div>
-                            <h4 class="title"><a href="#services-we-offer">IT Solutions & Support</a></h4>
-                            <p>Comprehensive IT services to ensure your business runs smoothly and securely.</p>
-                        </div>
-                    </div><!--End Icon Box -->
-
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-cogs"></i></div>
-                            <h4 class="title"><a href="#services-we-offer">Custom Software Development</a></h4>
-                            <p>Tailored software solutions designed to meet your unique business requirements.</p>
-                        </div>
-                    </div><!--End Icon Box -->
-
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-globe"></i></div>
-                            <h4 class="title"><a href="#services-we-offer">Web Development & Design</a></h4>
-                            <p>Stunning, responsive websites that deliver exceptional user experiences.</p>
-                        </div>
-                    </div><!--End Icon Box -->
-
-                    <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-bullhorn"></i></div>
-                            <h4 class="title"><a href="#services-we-offer">Digital Marketing & SEO</a></h4>
-                            <p>Boosting your online visibility and reaching your target audience effectively.</p>
-                            <!-- SEO Content Idea Generator Button -->
-                            <button type="button" class="btn btn-outline-light btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#seoContentModal">
-                                Generate SEO Ideas ✨
-                            </button>
-                        </div>
-                    </div><!--End Icon Box -->
-
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive digital solutions designed to transform your business and drive growth in the digital age.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Custom Software Development</h3>
+                        <p>Tailored software solutions designed to meet your unique business requirements, from enterprise applications to specialized tools.</p>
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Web Development & Design</h3>
+                        <p>Stunning, responsive websites and web applications that deliver exceptional user experiences and drive conversions.</p>
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Mobile App Development</h3>
+                        <p>Native and cross-platform mobile applications for iOS and Android that engage users and enhance your brand presence.</p>
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cybersecurity Solutions</h3>
+                        <p>Comprehensive security services to protect your digital assets from evolving threats and vulnerabilities.</p>
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cloud Computing Services</h3>
+                        <p>Scalable cloud solutions for enhanced flexibility, collaboration, and cost-effective data storage and management.</p>
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Marketing & SEO</h3>
+                        <p>Data-driven strategies to boost your online visibility, generate leads, and increase conversions.</p>
+                        <a href="#contact" class="btn btn-outline">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section><!-- End Hero Section -->
+    </section>
 
-    <main id="main">
-
-        <!-- Services We Offer Section -->
-        <section id="services-we-offer" class="services-we-offer section-bg top-icon-box">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Our Services</h2>
-                    <p>Explore our comprehensive range of digital and IT services designed to drive your success.</p>
-                </div>
-
-                <div class="row gy-4">
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-server"></i></div>
-                            <h4 class="title">IT Infrastructure & Networking</h4>
-                            <p>Setting up and maintaining robust IT infrastructures and secure network solutions.</p>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                            <h4 class="title">Cybersecurity Solutions</h4>
-                            <p>Protecting your digital assets from threats with advanced security measures.</p>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-cloud"></i></div>
-                            <h4 class="title">Cloud Computing Services</h4>
-                            <p>Scalable cloud solutions for enhanced flexibility, collaboration, and data storage.</p>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-chart-pie"></i></div>
-                            <h4 class="title">Business Intelligence & Analytics</h4>
-                            <p>Transforming data into actionable insights for informed business decisions.</p>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-mobile-alt"></i></div>
-                            <h4 class="title">Mobile Application Development</h4>
-                            <p>Crafting intuitive and powerful mobile apps for iOS and Android platforms.</p>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-headset"></i></div>
-                            <h4 class="title">IT Consulting & Support</h4>
-                            <p>Expert advice and ongoing support to optimize your technology investments.</p>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <!-- Accounting Software Solutions -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-calculator"></i></div>
-                            <h4 class="title">Accounting Software Solutions</h4>
-                            <p>Implementing and customizing robust accounting software to streamline your financial operations and reporting.</p>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <!-- NEW AI Service Suggester Card -->
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
-                        <div class="icon-box">
-                            <div class="icon"><i class="fas fa-lightbulb"></i></div>
-                            <h4 class="title">AI Service Suggester</h4>
-                            <p>Let our AI help you discover the perfect digital solutions for your business needs.</p>
-                            <button type="button" class="btn btn-outline-light btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#serviceSuggestorModal">
-                                Get AI Suggestions ✨
-                            </button>
-                        </div>
-                    </div><!-- End AI Service Suggester Card -->
-
-                </div>
-
+    <!-- Specialized Solutions -->
+    <section id="solutions" class="section" style="background: var(--tertiary-navy);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Specialized Solutions</h2>
+                <p>Industry-specific digital solutions designed to address your unique challenges and opportunities.</p>
             </div>
-        </section><!-- End Services We Offer Section -->
-
-        <!-- Specialized Solutions Section -->
-        <section id="specialized-solutions" class="specialized-solutions">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Specialized Solutions</h2>
-                    <p>Tailored digital and IT solutions for specific industry needs and business challenges.</p>
+            
+            <div class="solutions-container">
+                <div class="solution-card">
+                    <h3><i class="fas fa-hotel"></i> Hospitality Management</h3>
+                    <p>Comprehensive solutions for hotels, resorts, and restaurants including property management, booking systems, and guest experience platforms.</p>
+                    <a href="#contact" class="btn btn-outline">Discover Solutions</a>
                 </div>
-
-                <div class="category-header">
-                    <h3>Industry Specific Solutions</h3>
+                
+                <div class="solution-card">
+                    <h3><i class="fas fa-heartbeat"></i> Healthcare IT Systems</h3>
+                    <p>Secure and efficient IT solutions for healthcare providers, including patient management, EMR systems, and telehealth platforms.</p>
+                    <a href="#contact" class="btn btn-outline">Discover Solutions</a>
                 </div>
-                <div class="row gy-4 mb-5">
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="industry-box">
-                            <div class="icon"><i class="fas fa-hotel"></i></div>
-                            <h5>Hospitality Management Systems</h5>
-                            <p>Integrated solutions for hotels and resorts, enhancing guest experience and operational efficiency.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="industry-box">
-                            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                            <h5>Educational Software Solutions</h5>
-                            <p>Innovative platforms for schools and universities, supporting e-learning and administration.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="industry-box">
-                            <div class="icon"><i class="fas fa-hospital"></i></div>
-                            <h5>Healthcare IT Systems</h5>
-                            <p>Secure and efficient IT solutions for healthcare providers, including patient management.</p>
-                        </div>
-                    </div>
+                
+                <div class="solution-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Educational Platforms</h3>
+                    <p>Innovative learning management systems and educational platforms for schools, universities, and training institutions.</p>
+                    <a href="#contact" class="btn btn-outline">Discover Solutions</a>
                 </div>
-
-                <div class="category-header">
-                    <h3>Enterprise Resource Planning (ERP)</h3>
+                
+                <div class="solution-card">
+                    <h3><i class="fas fa-shopping-cart"></i> Retail & POS Systems</h3>
+                    <p>Advanced point-of-sale systems, inventory management, and e-commerce solutions for retail businesses of all sizes.</p>
+                    <a href="#contact" class="btn btn-outline">Discover Solutions</a>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-                        <div class="erp-solution">
-                            <div class="icon"><i class="fas fa-boxes"></i></div>
-                            <h4>Comprehensive ERP Implementations</h4>
-                            <p>Streamlining your business processes, from finance and HR to supply chain and manufacturing, with integrated ERP systems.</p>
-                        </div>
-                    </div>
+                
+                <div class="solution-card">
+                    <h3><i class="fas fa-industry"></i> ERP Solutions</h3>
+                    <p>Comprehensive enterprise resource planning systems to streamline operations, finance, HR, and supply chain management.</p>
+                    <a href="#contact" class="btn btn-outline">Discover Solutions</a>
                 </div>
-
+                
+                <div class="solution-card">
+                    <h3><i class="fas fa-fingerprint"></i> Biometric Systems</h3>
+                    <p>Secure biometric solutions for access control, attendance tracking, and identity verification across various industries.</p>
+                    <a href="#contact" class="btn btn-outline">Discover Solutions</a>
+                </div>
             </div>
-        </section><!-- End Specialized Solutions Section -->
+        </div>
+    </section>
 
-        <!-- Hardware & Software Solutions Section -->
-        <section id="hardware-software-solutions" class="hardware-software-solutions">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Hardware & Software Solutions</h2>
-                    <p>Providing essential tools and infrastructure for your business operations.</p>
-                </div>
-
-                <div class="category-header">
-                    <h3>Point of Sale (POS) Systems</h3>
-                </div>
-                <div class="row justify-content-center gy-4 mb-5">
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="solution-box">
-                            <div class="icon"><i class="fas fa-cash-register"></i></div>
-                            <h5>Retail POS Systems</h5>
-                            <p>Efficient and user-friendly POS solutions for retail businesses, managing sales and inventory.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="solution-box">
-                            <div class="icon"><i class="fas fa-utensils"></i></div>
-                            <h5>Restaurant POS Systems</h5>
-                            <p>Specialized POS for restaurants and cafes, optimizing order management and customer service.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="category-header">
-                    <h3>Other Software & Hardware</h3>
-                </div>
-                <div class="row gy-4">
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="solution-box">
-                            <div class="icon"><i class="fas fa-fingerprint"></i></div>
-                            <h5>Biometric & Attendance Systems</h5>
-                            <p>Secure and accurate solutions for time tracking and access control.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="solution-box">
-                            <div class="icon"><i class="fas fa-hdd"></i></div>
-                            <h5>Data Storage & Backup Solutions</h5>
-                            <p>Reliable systems for secure data storage and disaster recovery planning.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="solution-box">
-                            <div class="icon"><i class="fas fa-print"></i></div>
-                            <h5>Printer & Peripherals Supply</h5>
-                            <p>Providing high-quality printers, scanners, and other essential office peripherals.</p>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- Loan Calculator -->
+    <section id="calculator" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loan Payment Calculator</h2>
+                <p>Estimate your monthly payments for business loans and equipment financing.</p>
             </div>
-        </section><!-- End Hardware & Software Solutions Section -->
-
-        <!-- Loan Calculator Section -->
-        <section id="loan-calculator" class="loan-calculator">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Loan Payment Calculator</h2>
-                    <p>Estimate your monthly loan payments with our easy-to-use calculator.</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="loanAmount">Loan Amount ($)</label>
+                        <input type="number" id="loanAmount" class="form-control" placeholder="e.g., 50,000" min="0" step="1000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interestRate">Annual Interest Rate (%)</label>
+                        <input type="number" id="interestRate" class="form-control" placeholder="e.g., 5.5" min="0" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loanTerm">Loan Term (Years)</label>
+                        <input type="number" id="loanTerm" class="form-control" placeholder="e.g., 5" min="1" max="30">
+                    </div>
+                    
+                    <div class="form-group">
+                        <button onclick="calculateLoan()" class="btn btn-primary" style="width: 100%;">Calculate Payment</button>
+                    </div>
                 </div>
+                
+                <div class="result-container">
+                    <h4>Your Estimated Monthly Payment</h4>
+                    <div class="result-value">$<span id="resultValue">0.00</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title text-center text-light mb-4">Calculate Your Monthly Payment</h5>
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="loanAmount" class="form-label">Loan Amount ($)</label>
-                                        <input type="number" class="form-control" id="loanAmount" placeholder="e.g., 50000" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="interestRate" class="form-label">Annual Interest Rate (%)</label>
-                                        <input type="number" step="0.01" class="form-control" id="interestRate" placeholder="e.g., 5.5" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="loanTerm" class="form-label">Loan Term (Years)</label>
-                                        <input type="number" class="form-control" id="loanTerm" placeholder="e.g., 30" required>
-                                    </div>
-                                    <button type="button" class="btn btn-primary w-100 mt-3" onclick="calculateLoan()">Calculate</button>
-                                </form>
-                                <div id="monthlyPaymentResult" class="mt-4 d-none">
-                                    Your estimated monthly payment: <strong>$<span id="resultValue">0.00</span></strong>
-                                </div>
+    <!-- Portfolio -->
+    <section id="portfolio" class="section" style="background: var(--tertiary-navy);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Portfolio</h2>
+                <p>Explore our recent projects and success stories from satisfied clients.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMHBvcnRmb2xpb3xlbnwwfHx8fDE3MTkzNDgwNDh8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Web Development" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Corporate Website Redesign</h3>
+                        <p>Complete website overhaul for a leading Qatari financial institution</p>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3MTkzNDgwNDh8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Mobile App" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Retail Inventory App</h3>
+                        <p>Custom mobile application for inventory management and sales tracking</p>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50fGVufDB8fHx8MTcxOTM0ODA0OHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Software Development" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Custom CRM System</h3>
+                        <p>Enterprise CRM solution for a multinational corporation</p>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwbWFya2V0aW5nfGVufDB8fHx8MTcxOTM0ODA0OHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Digital Marketing" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Marketing Campaign</h3>
+                        <p>360° digital marketing strategy for a luxury retail brand</p>
+                        <a href="#" class="btn btn-outline">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Testimonials</h2>
+                <p>What our valued clients say about working with us.</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Noor Digital Solution transformed our business operations with their custom ERP solution. The team was professional, responsive, and delivered beyond our expectations. Our productivity has increased by 40% since implementation.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBwb3J0cmFpdHxlbnwwfHx8fDE3MTkzNDgwNDl8MA&ixlib=rb-4.0.3&q=80&w=400" alt="Client" class="author-img">
+                        <div class="author-info">
+                            <h4>Ahmed Al-Suwaidi</h4>
+                            <p>CEO, Qatari Holdings Group</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-        </section><!-- End Loan Calculator Section -->
-
-        <!-- About Us Section -->
-        <section id="about" class="about section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>About Us</h2>
-                    <p>Learn more about Noor Digital Solution, our mission, and our values.</p>
-                </div>
-
-                <div class="row gy-4">
-                    <div class="col-lg-6">
-                        <!-- AI Technology Themed Image for About Us Section -->
-                        <img src="https://images.unsplash.com/photo-1518770660439-4670c7924e65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHw1fHxhaSUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzE5MjM0MTY0fDB8&ixlib=rb-4.0.3&q=80&w=1080" class="img-fluid rounded" alt="About Us - AI Technology">
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Their cybersecurity team implemented a comprehensive security framework that protected us from multiple attempted breaches. The peace of mind knowing our data is secure is invaluable. Highly recommended!</p>
                     </div>
-                    <div class="col-lg-6">
-                        <h3>Who We Are</h3>
-                        <p>Noor Digital Solution is a leading IT and digital services provider based in Qatar. We are passionate about helping businesses thrive in the digital age by offering innovative, reliable, and tailored technology solutions.</p>
-                        <h3>Our Mission</h3>
-                        <p class="fst-italic">
-                            To empower businesses in Qatar with robust digital infrastructure and cutting-edge software, fostering growth and efficiency through transparent and client-focused partnerships.
-                        </p>
-                        <ul>
-                            <li><i class="bi bi-check-circle-fill"></i> Delivering high-quality, scalable IT and software solutions.</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Prioritizing client satisfaction and long-term partnerships.</li>
-                            <li><i class="bi bi-check-circle-fill"></i> Driving innovation and embracing emerging technologies.</li>
-                        </ul>
-                        <p>
-                            We believe that strong technological foundations are key to modern business success. Our team of certified professionals is dedicated to understanding your unique challenges and delivering solutions that truly make a difference.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End About Us Section -->
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="portfolio">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Our Portfolio</h2>
-                    <p>Showcasing our recent projects and successful client collaborations.</p>
-                </div>
-
-                <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
-
-                    <ul class="d-flex justify-content-center portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-web">Web Development</li>
-                        <li data-filter=".filter-app">Mobile Apps</li>
-                        <li data-filter=".filter-software">Software</li>
-                        <li data-filter=".filter-marketing">Marketing</li>
-                    </ul><!-- End Portfolio Filters -->
-
-                    <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="300">
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <!-- AI Technology Themed Image for Portfolio Item 1 -->
-                                <img src="https://images.unsplash.com/photo-1526374965328-adfdc14175de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHw3fHxhaSUyMGRhdGElMjB2aXN1YWxpemF0aW9ufGVufDB8fHx8MTcxOTIzNDI4OXww&ixlib=rb-4.0.3&q=80&w=1080" class="img-fluid" alt="AI Web Project">
-                                <div class="portfolio-info">
-                                    <h4>Corporate Website Redesign</h4>
-                                    <p>Web Development</p>
-                                    <div class="project-btn">
-                                        <a href="https://images.unsplash.com/photo-1526374965328-adfdc14175de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHw3fHxhaSUyMGRhdGElMjB2aXN1YWxpemF0aW9ufGVufDB8fHx8MTcxOTIzNDI4OXww&ixlib=rb-4.0.3&q=80&w=1080" data-gallery="portfolio-gallery" class="glightbox preview-link" title="Web Project 1"><i class="fas fa-search-plus"></i></a>
-                                        <a href="#" class="details-link fill-btn" title="More Details">Details</a>
-                                    </div>
-                                </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvbWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzE5MzQ4MDQ5fDA&ixlib=rb-4.0.3&q=80&w=400" alt="Client" class="author-img">
+                        <div class="author-info">
+                            <h4>Fatima Al-Khalifa</h4>
+                            <p>IT Director, National Healthcare</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
                             </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <!-- AI Technology Themed Image for Portfolio Item 2 -->
-                                <img src="https://images.unsplash.com/photo-1620712948252-5a21be6c3116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwyMHx8YWklMjBtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzE5MjM0NTA3fDB8&ixlib=rb-4.0.3&q=80&w=1080" class="img-fluid" alt="AI App Project">
-                                <div class="portfolio-info">
-                                    <h4>Retail Inventory App</h4>
-                                    <p>Mobile Apps</p>
-                                    <div class="project-btn">
-                                        <a href="https://images.unsplash.com/photo-1620712948252-5a21be6c3116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwyMHx8YWklMjBtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzE5MjM0NTA3fDB8&ixlib=rb-4.0.3&q=80&w=1080" data-gallery="portfolio-gallery" class="glightbox preview-link" title="App Project 1"><i class="fas fa-search-plus"></i></a>
-                                        <a href="#" class="details-link fill-btn" title="More Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-software">
-                            <div class="portfolio-wrap">
-                                <!-- AI Technology Themed Image for Portfolio Item 3 -->
-                                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwyMXx8YWklMjBjb2RpbmclMjBzb2Z0d2FyZXxlbnwwfHx8fDE3MTkyMzQ1MTB8MA&ixlib=rb-4.0.3&q=80&w=1080" class="img-fluid" alt="AI Software Project">
-                                <div class="portfolio-info">
-                                    <h4>Custom CRM System</h4>
-                                    <p>Software</p>
-                                    <div class="project-btn">
-                                        <a href="https://images.unsplash.com/photo-1542831371-29b0f74f9713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwyMXx8YWklMjBjb2RpbmclMjBzb2Z0d2FyZXxlbnwwfHx8fDE3MTkyMzQ1MTB8MA&ixlib=rb-4.0.3&q=80&w=1080" data-gallery="portfolio-gallery" class="glightbox preview-link" title="Software Project 1"><i class="fas fa-search-plus"></i></a>
-                                        <a href="#" class="details-link fill-btn" title="More Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-marketing">
-                            <div class="portfolio-wrap">
-                                <!-- AI Technology Themed Image for Portfolio Item 4 -->
-                                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f02e94d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxNXx8YWklMjBtYXJrZXRpbmd8ZW58MHx8fHwxNzE5MjM0NDg2fDA&ixlib=rb-4.0.3&q=80&w=1080" class="img-fluid" alt="AI Marketing Campaign">
-                                <div class="portfolio-info">
-                                    <h4>Social Media Campaign</h4>
-                                    <p>Marketing</p>
-                                    <div class="project-btn">
-                                        <a href="https://images.unsplash.com/photo-1582213782179-e0d53f02e94d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxNXx8YWklMjBtYXJrZXRpbmd8ZW58MHx8fHwxNzE5MjM0NDg2fDA&ixlib=rb-4.0.3&q=80&w=1080" data-gallery="portfolio-gallery" class="glightbox preview-link" title="Marketing Campaign 1"><i class="fas fa-search-plus"></i></a>
-                                        <a href="#" class="details-link fill-btn" title="More Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Portfolio Item -->
-
-                    </div><!-- End Portfolio Container -->
-
-                </div>
-
-            </div>
-        </section><!-- End Portfolio Section -->
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="testimonials">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Testimonials</h2>
-                    <p>What our clients say about us</p>
-                </div>
-
-                <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="info-box d-flex align-items-center">
-                                    <img src="https://placehold.co/90x90/0A192F/FFD700?text=AS" class="testimonial-img" alt="Client 1">
-                                    <div>
-                                        <h3>Ali S.</h3>
-                                        <h4>CEO & Founder</h4>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p>
-                                    <i class="fas fa-quote-left quote-icon-left"></i>
-                                    Noor Digital Solution transformed our online presence. Their web development team delivered a stunning and highly functional website that perfectly captures our brand. Highly recommend their expertise!
-                                    <i class="fas fa-quote-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="info-box d-flex align-items-center">
-                                    <img src="https://placehold.co/90x90/0A192F/FFD700?text=FA" class="testimonial-img" alt="Client 2">
-                                    <div>
-                                        <h3>Fatima A.</h3>
-                                        <h4>Marketing Director</h4>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p>
-                                    <i class="fas fa-quote-left quote-icon-left"></i>
-                                    Their digital marketing strategies significantly boosted our lead generation. Noor Digital Solution's team is professional, responsive, and truly understands the market.
-                                    <i class="fas fa-quote-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <div class="info-box d-flex align-items-center">
-                                    <img src="https://placehold.co/90x90/0A192F/FFD700?text=KM" class="testimonial-img" alt="Client 3">
-                                    <div>
-                                        <h3>Khalid M.</h3>
-                                        <h4>Operations Manager</h4>
-                                        <div class="stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p>
-                                    <i class="fas fa-quote-left quote-icon-left"></i>
-                                    We rely on Noor Digital Solution for all our IT support. Their prompt and efficient service keeps our operations running smoothly. They are an invaluable partner.
-                                    <i class="fas fa-quote-right quote-icon-right"></i>
-                                </p>
-                            </div>
-                        </div><!-- End testimonial item -->
-
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-        </section><!-- End Testimonials Section -->
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Contact</h2>
-                    <p>Get in touch with us for your digital and IT solution needs.</p>
-                </div>
-
-                <div class="row gy-5 gx-lg-5">
-
-                    <div class="col-lg-4">
-
-                        <div class="info">
-                            <h3>Get in touch</h3>
-                            <p>We're here to answer your questions and provide the best solutions.</p>
-
-                            <div class="info-item d-flex">
-                                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                                <div>
-                                    <h4>Location:</h4>
-                                    <p>Office 123, Business Tower, West Bay, Doha, Qatar</p>
-                                </div>
-                            </div><!-- End Info Item -->
-
-                            <div class="info-item d-flex">
-                                <i class="bi bi-envelope flex-shrink-0"></i>
-                                <div>
-                                    <h4>Email:</h4>
-                                    <p>info@noordigitalsolution.qa</p>
-                                </div>
-                            </div><!-- End Info Item -->
-
-                            <div class="info-item d-flex">
-                                <i class="bi bi-phone flex-shrink-0"></i>
-                                <div>
-                                    <h4>Call:</h4>
-                                    <p>+974 555 1234</p>
-                                </div>
-                            </div><!-- End Info Item -->
-
-                            <div class="info-item d-flex">
-                                <i class="bi bi-clock flex-shrink-0"></i>
-                                <div>
-                                    <h4>Business Hours:</h4>
-                                    <p>Sun-Thu: 9 AM - 5 PM</p>
-                                </div>
-                            </div><!-- End Info Item -->
-
                         </div>
-
                     </div>
-
-                    <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
-                        </form>
-                    </div><!-- End Contact Form -->
-
                 </div>
-
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The mobile app developed by Noor Digital Solution has revolutionized how we interact with our customers. User engagement has tripled, and we've seen a 25% increase in sales since launch. Truly exceptional work!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTcxOTM0ODA0OXww&ixlib=rb-4.0.3&q=80&w=400" alt="Client" class="author-img">
+                        <div class="author-info">
+                            <h4>Khalid Mohammed</h4>
+                            <p>Marketing Director, Luxury Retail Group</p>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section><!-- End Contact Section -->
+        </div>
+    </section>
 
-    </main><!-- End #main -->
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background: var(--tertiary-navy);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Reach out to start your digital transformation journey today.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>Location:</h4>
+                                <p>Office 123, Business Tower, West Bay, Doha, Qatar</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>Email:</h4>
+                                <a href="mailto:info@noordigitalsolution.qa">info@noordigitalsolution.qa</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <h4>Call:</h4>
+                                <a href="tel:+9745551234">+974 555 1234</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <h4>Business Hours:</h4>
+                                <p>Sun-Thu: 9 AM - 5 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group form-group-full">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group form-group-full">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" required></textarea>
+                            </div>
+                            
+                            <div class="form-group form-group-full">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer id="footer" class="footer">
+    <footer class="footer">
         <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-5 col-md-12 footer-info">
-                    <a href="index.html" class="logo d-flex align-items-center">
-                        <span>Noor Digital Solution</span>
-                    </a>
-                    <p>Empowering businesses in Qatar with effective and transparent digital solutions.</p>
-                    <div class="social-links d-flex mt-4">
-                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h4>Noor Digital Solution</h4>
+                    <p>Empowering businesses in Qatar with innovative digital solutions and comprehensive IT services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
                         <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About us</a></li>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of service</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy policy</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#solutions"><i class="fas fa-chevron-right"></i> Solutions</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-
-                <div class="col-lg-2 col-6 footer-links">
+                
+                <div class="footer-col">
                     <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> IT Infrastructure & Networking</a></li>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Cybersecurity Solutions</a></li>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Cloud Computing Services</a></li>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Business Intelligence & Analytics</a></li>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Mobile Application Development</a></li>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> IT Consulting & Support</a></li>
-                        <li><a href="#services-we-offer"><i class="fas fa-chevron-right"></i> Accounting Software Solutions</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#serviceSuggestorModal"><i class="fas fa-chevron-right"></i> AI Service Suggester</a></li>
-                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#seoContentModal"><i class="fas fa-chevron-right"></i> AI SEO Idea Generator</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Software Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Web Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Mobile App Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
                     </ul>
                 </div>
-
-                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                    <h4>Contact Us</h4>
-                    <p>
-                        Office 123, Business Tower <br>
-                        West Bay, Doha, Qatar<br><br>
-                        <strong>Phone:</strong> +974 555 1234<br>
-                        <strong>Email:</strong> info@noordigitalsolution.qa<br>
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="container copyright text-center">
-            &copy; Copyright <span id="current-year"></span> <strong><span>Noor Digital Solution</span></strong>. All Rights Reserved
-        </div>
-    </footer><!-- End Footer -->
-
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- AI Service Suggestor Modal -->
-    <div class="modal fade" id="serviceSuggestorModal" tabindex="-1" aria-labelledby="serviceSuggestorModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="serviceSuggestorModalLabel">AI Service Suggester ✨</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="businessDescription" class="form-label">Describe your business or needs:</label>
-                        <textarea class="form-control" id="businessDescription" rows="5" placeholder="e.g., 'A small retail shop needing help with inventory management and online sales.' or 'A healthcare clinic looking for better patient data security.'"></textarea>
-                    </div>
-                    <button type="button" class="btn btn-primary w-100" id="getServiceSuggestionsBtn">Get AI Suggestions</button>
-                    <div id="serviceSuggestionLoading" class="text-center mt-3 d-none">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
                         </div>
-                        <p class="mt-2">Generating suggestions, please wait...</p>
-                    </div>
-                    <div id="serviceSuggestionOutput" class="mt-3">
-                        <!-- AI Suggestions will be displayed here -->
-                    </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- SEO Content Idea Generator Modal -->
-    <div class="modal fade" id="seoContentModal" tabindex="-1" aria-labelledby="seoContentModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="seoContentModalLabel">AI SEO Content Idea Generator ✨</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="seoKeywordInput" class="form-label">Enter a primary keyword:</label>
-                        <input type="text" class="form-control" id="seoKeywordInput" placeholder="e.g., 'cloud computing for small business'">
-                    </div>
-                    <button type="button" class="btn btn-primary w-100" id="getSeoIdeasBtn">Generate SEO Ideas</button>
-                    <div id="seoLoading" class="text-center mt-3 d-none">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                        <p class="mt-2">Generating SEO ideas, please wait...</p>
-                    </div>
-                    <div id="seoContentOutput" class="mt-3">
-                        <!-- AI SEO ideas will be displayed here -->
-                    </div>
-                </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Noor Digital Solution. All Rights Reserved.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Vendor JS Files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- Template Main JS File -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile navigation toggle
-            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-            const navbar = document.querySelector('#navbar');
-
-            if (mobileNavToggle && navbar) {
-                mobileNavToggle.addEventListener('click', function() {
-                    navbar.classList.toggle('navbar-mobile');
-                    this.classList.toggle('bi-list');
-                    this.classList.toggle('bi-x');
-                });
-
-                document.querySelectorAll('#navbar a').forEach(item => {
-                    item.addEventListener('click', () => {
-                        if (navbar.classList.contains('navbar-mobile')) {
-                            navbar.classList.remove('navbar-mobile');
-                            mobileNavToggle.classList.toggle('bi-list');
-                            mobileNavToggle.classList.toggle('bi-x');
-                        }
-                    });
-                });
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
-
-            // GLightbox for video (assuming .glightbox is used for popups)
-            const glightbox = GLightbox({
-                selector: '.glightbox',
-                touchNavigation: true,
-                loop: true,
-                autoplayVideos: true,
-                openEffect: 'fade',
-                closeEffect: 'fade',
-                cssEfects: {
-                    fade: { in: 'fadeIn', out: 'fadeOut' }
-                }
-            });
-
-
-            // AOS (Animate On Scroll) initialization
-            AOS.init({
-                duration: 1000,
-                easing: 'ease-in-out',
-                once: true,
-                mirror: false
-            });
-
-            // Swiper for testimonials
-            new Swiper('.slides-3', {
-                speed: 600,
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false
-                },
-                slidesPerView: 'auto',
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                    clickable: true
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 40
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 20
-                    },
-                    1200: {
-                        slidesPerView: 2,
-                        spaceBetween: 20
-                    }
-                }
-            });
-
-            // Set current year in footer
-            const currentYearSpan = document.getElementById('current-year');
-            if (currentYearSpan) {
-                currentYearSpan.textContent = new Date().getFullYear();
-            }
-
-            // Loan Calculator Functionality
-            window.calculateLoan = function() {
-                const loanAmount = parseFloat(document.getElementById('loanAmount').value);
-                const interestRate = parseFloat(document.getElementById('interestRate').value);
-                const loanTerm = parseFloat(document.getElementById('loanTerm').value);
-
-                if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate < 0 || loanTerm <= 0) {
-                    document.getElementById('resultValue').textContent = "Invalid Input";
-                    document.getElementById('monthlyPaymentResult').classList.remove('d-none');
-                    return;
-                }
-
-                const monthlyInterestRate = (interestRate / 100) / 12;
-                const numberOfPayments = loanTerm * 12;
-
-                let monthlyPayment;
-                if (monthlyInterestRate === 0) {
-                    monthlyPayment = loanAmount / numberOfPayments;
-                } else {
-                    monthlyPayment = loanAmount * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
-                }
-
-                document.getElementById('resultValue').textContent = monthlyPayment.toFixed(2);
-                document.getElementById('monthlyPaymentResult').classList.remove('d-none');
-            };
-
-            // Scroll-to-top button visibility
-            const scrollTop = document.querySelector('.scroll-top');
-            function toggleScrollTop() {
-                if (scrollTop) {
-                    window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-                }
-            }
-            document.addEventListener('load', toggleScrollTop);
-            document.addEventListener('scroll', toggleScrollTop);
-
-            // Function to call Gemini API
-            async function callGeminiAPI(prompt, outputElementId, loadingElementId) {
-                const outputElement = document.getElementById(outputElementId);
-                const loadingElement = document.getElementById(loadingElementId);
-
-                outputElement.innerHTML = ''; // Clear previous output
-                loadingElement.classList.remove('d-none'); // Show loading spinner
-
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // Leave as-is, Canvas will provide it at runtime
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const text = result.candidates[0].content.parts[0].text;
-                        outputElement.innerHTML = marked.parse(text); // Use marked.js for Markdown to HTML
-                    } else {
-                        outputElement.innerHTML = '<p class="text-danger">Error: Could not get a valid response from the AI.</p>';
-                    }
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    outputElement.innerHTML = '<p class="text-danger">Error: Failed to connect to the AI service. Please try again.</p>';
-                } finally {
-                    loadingElement.classList.add('d-none'); // Hide loading spinner
-                }
-            }
-
-            // AI Service Suggester Logic
-            const getServiceSuggestionsBtn = document.getElementById('getServiceSuggestionsBtn');
-            if (getServiceSuggestionsBtn) {
-                getServiceSuggestionsBtn.addEventListener('click', function() {
-                    const businessDescription = document.getElementById('businessDescription').value;
-                    if (businessDescription.trim() === "") {
-                        document.getElementById('serviceSuggestionOutput').innerHTML = '<p class="text-warning">Please describe your business or needs to get suggestions.</p>';
-                        return;
-                    }
-                    const prompt = `Given the following business description, suggest relevant IT and digital solutions that Noor Digital Solution can offer. Focus on services like IT infrastructure, cybersecurity, cloud computing, business intelligence, mobile app development, web development, digital marketing, ERP, POS, biometric systems, data storage, and accounting software. Format the response as a bulleted list of services with a brief explanation for each service. \n\nBusiness Description: ${businessDescription}`;
-                    callGeminiAPI(prompt, 'serviceSuggestionOutput', 'serviceSuggestionLoading');
-                });
-            }
-
-            // SEO Content Idea Generator Logic
-            const getSeoIdeasBtn = document.getElementById('getSeoIdeasBtn');
-            if (getSeoIdeasBtn) {
-                getSeoIdeasBtn.addEventListener('click', function() {
-                    const seoKeyword = document.getElementById('seoKeywordInput').value;
-                    if (seoKeyword.trim() === "") {
-                        document.getElementById('seoContentOutput').innerHTML = '<p class="text-warning">Please enter a keyword to generate SEO ideas.</p>';
-                        return;
-                    }
-                    const prompt = `For the keyword '${seoKeyword}', generate 3-5 SEO-friendly blog post titles, a concise meta description (under 160 characters), and 3-5 related keywords. Format the response clearly with bold headings for each section (Blog Titles, Meta Description, Related Keywords).`;
-                    callGeminiAPI(prompt, 'seoContentOutput', 'seoLoading');
-                });
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 500) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
             }
         });
-    </script>
-    <!-- Add Marked.js for Markdown rendering -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Loan Calculator
+        function calculateLoan() {
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value);
+            const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+            
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || 
+                loanAmount <= 0 || interestRate < 0 || loanTerm <= 0) {
+                document.getElementById('resultValue').textContent = "0.00";
+                return;
+            }
+            
+            const monthlyInterestRate = (interestRate / 100) / 12;
+            const numberOfPayments = loanTerm * 12;
+            
+            let monthlyPayment;
+            if (monthlyInterestRate === 0) {
+                monthlyPayment = loanAmount / numberOfPayments;
+            } else {
+                monthlyPayment = loanAmount * 
+                    (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, numberOfPayments)) / 
+                    (Math.pow(1 + monthlyInterestRate, numberOfPayments) - 1);
+            }
+            
+            document.getElementById('resultValue').textContent = monthlyPayment.toFixed(2);
+        }
+
+        // Initialize loan calculator with sample values
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loanAmount').value = 50000;
+            document.getElementById('interestRate').value = 5.5;
+            document.getElementById('loanTerm').value = 5;
+            calculateLoan();
+        });
+    </script>
 </body>
 </html>
