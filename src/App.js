@@ -213,7 +213,7 @@ function App() {
                             lg:mb-0 lg:order-2 lg:col-span-1 /* Desktop: Order 2, spans 1 col */
                             hero-content-mobile-centered md:hero-content-tablet-centered lg:hero-content-desktop-center
                         ">
-                            <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
+                            <h1 id="hero-heading" className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-4">
                                 Empowering Intelligence. <br/><span className="primary-gradient-text">Transforming Tomorrow.</span>
                             </h1>
                             <p className="text-lg md:text-xl text-gray-300">
@@ -399,6 +399,35 @@ function App() {
                             <h3 className="text-2xl font-bold text-white mb-2">Digital Marketing & SEO</h3>
                             <p className="text-gray-300 mb-4">Data-driven strategies to boost your online visibility, generate leads, and increase conversions.</p>
                             <button onClick={() => navigateTo('contact')} className="px-5 py-2 border-2 border-[#00BFFF] text-[#00BFFF] font-bold rounded-lg hover:bg-[#00BFFF] hover:text-white transition-colors duration-300 mt-auto" aria-label="Learn more about Digital Marketing & SEO">Learn More</button>
+                        </div>
+
+                        {/* New Services Added Here */}
+                        <div className="glow-border bg-gray-900/40 p-8 rounded-xl text-center flex flex-col items-center">
+                            <img src="https://placehold.co/100x100/1a1a2e/A9A9A9?text=ERP" alt="ERP System Icon" className="w-20 h-20 mb-4 rounded-full" />
+                            <h3 className="text-2xl font-bold text-white mb-2">Enterprise Resource Planning (ERP)</h3>
+                            <p className="text-gray-300 mb-4">Integrated management of core business processes, often in real-time, facilitated by technology and custom solutions.</p>
+                            <button onClick={() => navigateTo('contact')} className="px-5 py-2 border-2 border-[#00BFFF] text-[#00BFFF] font-bold rounded-lg hover:bg-[#00BFFF] hover:text-white transition-colors duration-300 mt-auto" aria-label="Learn more about ERP Systems">Learn More</button>
+                        </div>
+
+                        <div className="glow-border bg-gray-900/40 p-8 rounded-xl text-center flex flex-col items-center">
+                            <img src="https://placehold.co/100x100/1a1a2e/A9A9A9?text=POS" alt="POS System Icon" className="w-20 h-20 mb-4 rounded-full" />
+                            <h3 className="text-2xl font-bold text-white mb-2">Point of Sale (POS) Systems</h3>
+                            <p className="text-gray-300 mb-4">Advanced POS solutions for efficient transaction processing, inventory management, and customer relations in retail.</p>
+                            <button onClick={() => navigateTo('contact')} className="px-5 py-2 border-2 border-[#00BFFF] text-[#00BFFF] font-bold rounded-lg hover:bg-[#00BFFF] hover:text-white transition-colors duration-300 mt-auto" aria-label="Learn more about POS Systems">Learn More</button>
+                        </div>
+
+                        <div className="glow-border bg-gray-900/40 p-8 rounded-xl text-center flex flex-col items-center">
+                            <img src="https://placehold.co/100x100/1a1a2e/A9A9A9?text=Retail" alt="Retail & Supermarket Icon" className="w-20 h-20 mb-4 rounded-full" />
+                            <h3 className="text-2xl font-bold text-white mb-2">Retail & Supermarket Solutions</h3>
+                            <p className="text-gray-300 mb-4">Specialized software for inventory, sales, supply chain, and customer loyalty programs for retail businesses.</p>
+                            <button onClick={() => navigateTo('contact')} className="px-5 py-2 border-2 border-[#00BFFF] text-[#00BFFF] font-bold rounded-lg hover:bg-[#00BFFF] hover:text-white transition-colors duration-300 mt-auto" aria-label="Learn more about Retail & Supermarket Solutions">Learn More</button>
+                        </div>
+
+                        <div className="glow-border bg-gray-900/40 p-8 rounded-xl text-center flex flex-col items-center">
+                            <img src="https://placehold.co/100x100/1a1a2e/A9A9A9?text=Hospitality" alt="Hospitality Software Icon" className="w-20 h-20 mb-4 rounded-full" />
+                            <h3 className="text-2xl font-bold text-white mb-2">Hospitality & Service Industry Software</h3>
+                            <p className="text-gray-300 mb-4">Tailored solutions for restaurants, laundries, salons, and other service businesses, improving operations and customer experience.</p>
+                            <button onClick={() => navigateTo('contact')} className="px-5 py-2 border-2 border-[#00BFFF] text-[#00BFFF] font-bold rounded-lg hover:bg-[#00BFFF] hover:text-white transition-colors duration-300 mt-auto" aria-label="Learn more about Hospitality Software">Learn More</button>
                         </div>
                     </div>
 
