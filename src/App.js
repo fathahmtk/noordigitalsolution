@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+// Styles are now inline within this component for self-containment and simplified deployment.
 
 // Main App Component
 function App() {
