@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // Main App Component
 function App() {
     const [currentPage, setCurrentPage] = useState('home'); // State for client-side navigation
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+    const [isMobileMenuOpen, setIsMobileMenuMenuOpen] = useState(false); // State for mobile menu
 
     // Function to handle navigation
     const navigateTo = (pageId) => {
@@ -15,11 +15,11 @@ function App() {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        setIsMobileMenuOpen(false); // Close mobile menu on navigation
+        setIsMobileMenuMenuOpen(false); // Close mobile menu on navigation
     };
 
     // Header Component
-    const Header = ({ navigateTo, isMobileMenuOpen, setIsMobileMenuOpen }) => {
+    const Header = ({ navigateTo, isMobileMenuOpen, setIsMobileMenuMenuOpen }) => {
         const navLinks = [
             { id: 'home', name: 'Home' },
             { id: 'about', name: 'About Us' },
@@ -57,13 +57,13 @@ function App() {
                         className="md:hidden mobile-toggle cursor-pointer" 
                         id="mobile-menu-button" 
                         aria-label="Open mobile navigation menu"
-                        onClick={() => setIsMobileMenuOpen(true)}
+                        onClick={() => setIsMobileMenuMenuOpen(true)}
                     >
                         ☰
                     </button>
 
                     {/* Mobile Menu Overlay */}
-                    <div id="mobile-menu-overlay" className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`} aria-hidden={!isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(false)}></div>
+                    <div id="mobile-menu-overlay" className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`} aria-hidden={!isMobileMenuOpen} onClick={() => setIsMobileMenuMenuOpen(false)}></div>
                     
                     {/* Mobile Navigation Menu */}
                     <nav id="mobile-nav-menu" className={`mobile-nav-menu ${isMobileMenuOpen ? 'active' : ''}`} aria-label="Mobile Navigation">
@@ -71,7 +71,7 @@ function App() {
                             className="mobile-close-btn" 
                             id="mobile-close-button" 
                             aria-label="Close mobile navigation menu"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={() => setIsMobileMenuMenuOpen(false)}
                         >
                             ✖
                         </button>
@@ -113,7 +113,7 @@ function App() {
                     this.size = Math.random() * 1.5 + 0.5;
                     this.speedX = Math.random() * 2 - 1;
                     this.speedY = Math.random() * 2 - 1;
-                    this.color = `rgba(169, 169, 169, ${Math.random() * 0.5 + 0.2})`;
+                    this.color = `rgba(169, 169, 169, ${Math.random() * 0.5 + 0.2})`; // Light particles for dark background
                 }
 
                 update() {
@@ -150,7 +150,7 @@ function App() {
 
                         if (distance < 100) {
                             const opacity = 1 - distance / 100;
-                            ctx.strokeStyle = `rgba(169, 169, 169, ${opacity * 0.5})`;
+                            ctx.strokeStyle = `rgba(169, 169, 169, ${opacity * 0.5})`; // Light lines for dark background
                             ctx.lineWidth = 1;
                             ctx.beginPath();
                             ctx.moveTo(particles[a].x, particles[a].y);
@@ -246,7 +246,7 @@ function App() {
     // About Us Section Component
     const AboutSection = () => {
         return (
-            <section id="about" className="py-20 md:py-32 bg-gray-900/20" aria-labelledby="about-heading">
+            <section id="about" className="py-20 md:py-32 bg-[#0a0a1a]/80" aria-labelledby="about-heading">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 id="about-heading" className="text-4xl md:text-5xl font-black text-white mb-4">About Us</h2>
@@ -256,7 +256,7 @@ function App() {
                     <div className="flex flex-col lg:flex-row items-center lg:space-x-12">
                         <div className="lg:w-1/2 mb-10 lg:mb-0">
                             {/* Placeholder for image or animation */}
-                            <div className="bg-gray-800/60 rounded-xl p-8 h-80 flex items-center justify-center glow-border">
+                            <div className="bg-gray-900/60 rounded-xl p-8 h-80 flex items-center justify-center glow-border">
                                 <span className="text-6xl primary-gradient-text">💡 Innovation Hub 💡</span>
                             </div>
                         </div>
@@ -351,7 +351,7 @@ function App() {
         };
 
         return (
-            <section id="solutions-services" className="py-20 md:py-32" aria-labelledby="solutions-services-heading">
+            <section id="solutions-services" className="py-20 md:py-32 bg-black/50" aria-labelledby="solutions-services-heading">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 id="solutions-services-heading" className="text-4xl md:text-5xl font-black text-white mb-4">Our Solutions & Services</h2>
@@ -403,7 +403,7 @@ function App() {
                     </div>
 
                     {/* AI Solution Ideator Section */}
-                    <div className="mt-20 p-8 rounded-xl bg-gray-900/40 glow-border">
+                    <div className="mt-20 p-8 rounded-xl bg-gray-800/60 glow-border">
                         <h3 className="text-3xl md:text-4xl font-black text-white mb-6 text-center">
                             ✨ AI Solution Ideator ✨
                         </h3>
@@ -416,7 +416,7 @@ function App() {
                                 onChange={(e) => setBusinessChallenge(e.target.value)}
                                 placeholder="E.g., 'Automating customer support queries' or 'Improving data analysis for sales forecasts'..."
                                 rows="4"
-                                className="w-full bg-gray-800 text-white p-4 rounded-lg border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none transition resize-y"
+                                className="w-full bg-gray-700 text-white p-4 rounded-lg border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none transition resize-y"
                                 aria-label="Business Challenge Input"
                             ></textarea>
                             <button
@@ -438,7 +438,7 @@ function App() {
                         {solutions.length > 0 && (
                             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {solutions.map((sol, index) => (
-                                    <div key={index} className="bg-gray-800/60 p-6 rounded-lg glow-border">
+                                    <div key={index} className="bg-gray-900/50 p-6 rounded-lg glow-border">
                                         <h4 className="text-xl font-bold primary-gradient-text mb-2">{sol.title}</h4>
                                         <p className="text-gray-300">{sol.description}</p>
                                     </div>
@@ -454,7 +454,7 @@ function App() {
     // Case Studies Section Component
     const CaseStudiesSection = () => {
         return (
-            <section id="case-studies" className="py-20 md:py-32 bg-gray-900/20" aria-labelledby="case-studies-heading">
+            <section id="case-studies" className="py-20 md:py-32 bg-[#0a0a1a]/80" aria-labelledby="case-studies-heading">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 id="case-studies-heading" className="text-4xl md:text-5xl font-black text-white mb-4">Our Success Stories</h2>
@@ -512,7 +512,7 @@ function App() {
     // Blog Section Component
     const BlogSection = () => {
         return (
-            <section id="blog" className="py-20 md:py-32" aria-labelledby="blog-heading">
+            <section id="blog" className="py-20 md:py-32 bg-black/50" aria-labelledby="blog-heading">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 id="blog-heading" className="text-4xl md:text-5xl font-black text-white mb-4">Blog & Qatar Insights</h2>
@@ -544,7 +544,7 @@ function App() {
     // Testimonials Section Component
     const TestimonialsSection = () => {
         return (
-            <section id="testimonials" className="py-20 md:py-32 bg-gray-900/20" aria-labelledby="testimonials-heading">
+            <section id="testimonials" className="py-20 md:py-32 bg-[#0a0a1a]/80" aria-labelledby="testimonials-heading">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 id="testimonials-heading" className="text-4xl md:text-5xl font-black text-white mb-4">Client Testimonials</h2>
@@ -584,7 +584,7 @@ function App() {
     // Contact Us Section Component
     const ContactSection = () => {
         return (
-            <section id="contact" className="py-20 md:py-32" aria-labelledby="contact-heading">
+            <section id="contact" className="py-20 md:py-32 bg-black/50" aria-labelledby="contact-heading">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 id="contact-heading" className="text-4xl md:text-5xl font-black text-white mb-4">Get in Touch</h2>
@@ -688,7 +688,7 @@ function App() {
 
     return (
         <>
-            <Header navigateTo={navigateTo} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+            <Header navigateTo={navigateTo} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuMenuOpen={setIsMobileMenuMenuOpen} />
             <main>
                 {/* Render sections based on currentPage state */}
                 <HeroSection navigateTo={navigateTo} />
@@ -705,8 +705,13 @@ function App() {
             <style>{`
                 body {
                     font-family: 'Inter', sans-serif;
-                    background-color: #0a0a1a;
-                    color: #A9A9A9;
+                    background-color: #0a0a1a; /* Fallback for image load failure */
+                    color: #A9A9A9; /* Light gray for main body text */
+                    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Ffreebackground%2Fthe-art-of-human-machine-intelligence_15947786.html&psig=AOvVaw2PHJM-1sFKxkkc7BY6GMQs&ust=1750913387958000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLj08Onii44DFQAAAAAdAAAAABAE');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed; /* Makes background scroll with page */
                 }
 
                 .primary-gradient-bg {
@@ -760,6 +765,7 @@ function App() {
                     width: 100%;
                     height: 100%;
                     z-index: 0;
+                    background-color: rgba(0,0,0,0); /* Make canvas background transparent to see body image */
                 }
 
                 @keyframes fadeIn {
@@ -811,7 +817,7 @@ function App() {
                     width: 80%;
                     max-width: 300px;
                     height: 100%;
-                    background: #1a1a2e;
+                    background: #1a1a2e; /* Dark background for mobile menu */
                     padding-top: 4rem;
                     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
                     transition: right 0.3s ease-in-out;
