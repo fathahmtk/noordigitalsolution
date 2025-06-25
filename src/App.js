@@ -214,7 +214,7 @@ function App() {
                             hero-content-mobile-centered md:hero-content-tablet-centered lg:hero-content-desktop-center
                         ">
                             <h1 id="hero-heading" className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
-                                Empowering Intelligence. <span className="primary-gradient-text">Transforming Tomorrow.</span>
+                                Empowering Intelligence. <br/><span className="primary-gradient-text">Transforming Tomorrow.</span>
                             </h1>
                             <p className="text-lg md:text-xl text-gray-300">
                                 We fuse cutting-edge AI with strategic digital solutions to unlock unparalleled growth and efficiency for your enterprise.
