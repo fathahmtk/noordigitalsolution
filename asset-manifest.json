@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/noordigitalsolution/static/js/main.eec36dd8.js",
+    "main.js": "/noordigitalsolution/static/js/main.cec35940.js",
     "static/js/453.a44604c6.chunk.js": "/noordigitalsolution/static/js/453.a44604c6.chunk.js",
     "index.html": "/noordigitalsolution/index.html",
-    "main.eec36dd8.js.map": "/noordigitalsolution/static/js/main.eec36dd8.js.map",
+    "main.cec35940.js.map": "/noordigitalsolution/static/js/main.cec35940.js.map",
     "453.a44604c6.chunk.js.map": "/noordigitalsolution/static/js/453.a44604c6.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.eec36dd8.js"
+    "static/js/main.cec35940.js"
   ]
 }
