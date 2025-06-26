@@ -5,6 +5,10 @@ function App() {
     const [currentPage, setCurrentPage] = useState('home'); // State for client-side navigation
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
 
+    // Qatar phone number for WhatsApp (replace with actual if different)
+    const whatsappPhoneNumber = '97474464994'; // Example: +974 7446 4994
+    const whatsappMessage = encodeURIComponent('Hello Noor Digital Solution, I would like to inquire about your services.');
+
     // Function to handle navigation
     const navigateTo = (pageId) => {
         setCurrentPage(pageId);
@@ -22,7 +26,7 @@ function App() {
     };
 
     // Header Component
-    const Header = ({ navigateTo, isMobileMenuOpen, setIsMobileMenuOpen }) => {
+    const Header = ({ navigateTo, isMobileMenuOpen, setIsMobileMenuOpen, whatsappPhoneNumber, whatsappMessage }) => {
         const navLinks = [
             { id: 'home', name: 'Home' },
             { id: 'services', name: 'Services' },
@@ -62,6 +66,15 @@ function App() {
                                 </a>
                             ))}
                             <a
+                                href={`https://wa.me/${whatsappPhoneNumber}?text=${whatsappMessage}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-green-500 text-white px-5 py-2 rounded-lg font-medium hover:bg-green-600 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                                aria-label="WhatsApp Us"
+                            >
+                                <i className="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a
                                 href="#contact"
                                 onClick={() => navigateTo('contact')}
                                 className="bg-accent text-white px-5 py-2 rounded-lg font-medium hover:bg-accentDark transition-all duration-300 transform hover:scale-105"
@@ -93,6 +106,14 @@ function App() {
                                 {link.name}
                             </a>
                         ))}
+                         <a
+                            href={`https://wa.me/${whatsappPhoneNumber}?text=${whatsappMessage}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block bg-green-500 text-white text-center py-2 rounded-md mt-2 flex items-center justify-center gap-2"
+                        >
+                            <i className="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                         <a
                             href="#contact"
                             onClick={() => navigateTo('contact')}
@@ -514,16 +535,60 @@ function App() {
     );
 
     // Contact Section
-    const ContactSection = () => {
+    const ContactSection = ({ whatsappPhoneNumber, whatsappMessage }) => {
         const [showToast, setShowToast] = useState(false);
         const [toastMessage, setToastMessage] = useState('');
+        const [formData, setFormData] = useState({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        });
 
-        const handleSubmit = (e) => {
+        const handleChange = (e) => {
+            setFormData({
+                ...formData,
+                [e.target.id]: e.target.value
+            });
+        };
+
+        const handleSubmit = async (e) => {
             e.preventDefault();
-            setToastMessage('Your message has been sent successfully!');
-            setShowToast(true);
-            setTimeout(() => setShowToast(false), 3000);
-            e.target.reset(); // Clear form fields
+            setShowToast(false); // Hide any previous toast
+
+            // Formspree endpoint - REPLACE 'YOUR_FORMSPREE_FORM_ID' with your actual Formspree form ID
+            const formspreeUrl = "https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"; // IMPORTANT: Replace with your actual Formspree ID
+
+            try {
+                const response = await fetch(formspreeUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    setToastMessage('Your message has been sent successfully!');
+                    setShowToast(true);
+                    setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form fields
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        setToastMessage(`Submission failed: ${data.errors.map(error => error.message).join(', ')}`);
+                    } else {
+                        setToastMessage('Form submission failed. Please try again.');
+                    }
+                    setShowToast(true);
+                }
+            } catch (error) {
+                console.error('Network or submission error:', error);
+                setToastMessage('Network error. Please try again later.');
+                setShowToast(true);
+            } finally {
+                setTimeout(() => setShowToast(false), 3000); // Hide toast after 3 seconds
+            }
         };
 
         return (
@@ -538,20 +603,20 @@ function App() {
                             <div className="grid md:grid-cols-2 gap-6 mb-6">
                                 <div>
                                     <label htmlFor="name" className="block mb-2 font-medium text-gray-700">Your Name</label>
-                                    <input type="text" id="name" placeholder="Enter your name" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" required />
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" value={formData.name} onChange={handleChange} required />
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block mb-2 font-medium text-gray-700">Your Email</label>
-                                    <input type="email" id="email" placeholder="Enter your email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" required />
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" value={formData.email} onChange={handleChange} required />
                                 </div>
                             </div>
                             <div className="mb-6">
                                 <label htmlFor="subject" className="block mb-2 font-medium text-gray-700">Subject</label>
-                                <input type="text" id="subject" placeholder="What is this regarding?" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" required />
+                                <input type="text" id="subject" name="_subject" placeholder="What is this regarding?" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" value={formData.subject} onChange={handleChange} required />
                             </div>
                             <div className="mb-6">
                                 <label htmlFor="message" className="block mb-2 font-medium text-gray-700">Your Message</label>
-                                <textarea id="message" placeholder="Tell us how we can help..." rows="5" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" required></textarea>
+                                <textarea id="message" name="message" placeholder="Tell us how we can help..." rows="5" className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition" value={formData.message} onChange={handleChange} required></textarea>
                             </div>
                             <div className="text-center">
                                 <button type="submit" className="bg-accent text-white px-10 py-3 rounded-lg font-semibold hover:bg-accentDark transition-all duration-300 transform hover:scale-105 shadow-lg">Send Message</button>
@@ -570,7 +635,7 @@ function App() {
     };
 
     // Footer Component
-    const Footer = () => (
+    const Footer = ({ whatsappPhoneNumber, whatsappMessage }) => (
         <footer className="bg-secondary text-white pt-16 pb-8">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
@@ -626,6 +691,10 @@ function App() {
                             <div className="flex items-start">
                                 <i className="fas fa-envelope mt-1 mr-3 text-accentLight"></i>
                                 <a href="mailto:info@noordigital.com" className="hover:text-white transition-colors">info@noordigital.com</a>
+                            </div>
+                             <div className="flex items-start">
+                                <i className="fab fa-whatsapp mt-1 mr-3 text-accentLight"></i>
+                                <a href={`https://wa.me/${whatsappPhoneNumber}?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp Us</a>
                             </div>
                         </div>
                     </div>
@@ -737,7 +806,13 @@ function App() {
                 </div>
             </div>
 
-            <Header navigateTo={navigateTo} isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+            <Header 
+                navigateTo={navigateTo} 
+                isMobileMenuOpen={isMobileMenuOpen} 
+                setIsMobileMenuOpen={setIsMobileMenuOpen} 
+                whatsappPhoneNumber={whatsappPhoneNumber}
+                whatsappMessage={whatsappMessage}
+            />
 
             <main>
                 {/* Render sections based on currentPage state */}
@@ -746,10 +821,16 @@ function App() {
                 {currentPage === 'why-us' && <WhyUsSection />}
                 {currentPage === 'testimonials' && <TestimonialsSection />}
                 {currentPage === 'blog' && <BlogSection />}
-                {currentPage === 'contact' && <ContactSection />}
+                {currentPage === 'contact' && <ContactSection 
+                    whatsappPhoneNumber={whatsappPhoneNumber} 
+                    whatsappMessage={whatsappMessage} 
+                />}
             </main>
 
-            <Footer />
+            <Footer 
+                whatsappPhoneNumber={whatsappPhoneNumber}
+                whatsappMessage={whatsappMessage}
+            />
         </div>
     );
 }
